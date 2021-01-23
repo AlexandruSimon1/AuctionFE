@@ -13,17 +13,17 @@ export class Auction {
     category: Category;
     bidding: Bidding[];
     purchasing: Purchasing;
-    constructor(id: number,
-        title: string,
-        description: string,
-        photos: string,
-        minimumPrice: number,
-        buyNow: number,
-        startDate: Date,
-        endDate: Date,
-        category: Category,
-        bidding: Bidding[],
-        purchasing: Purchasing) {
+    constructor(id?: number,
+        title?: string,
+        description?: string,
+        photos?: string,
+        minimumPrice?: number,
+        buyNow?: number,
+        startDate?: Date,
+        endDate?: Date,
+        category?: Category,
+        bidding?: Bidding[],
+        purchasing?: Purchasing) {
         this.id = id;
         this.title = title;
         this.description = description;

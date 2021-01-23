@@ -31,4 +31,17 @@ export class AuctionService {
   updateAuctionById(id: number, value: any): Observable<Object> {
     return this.http.put<Object>(`${this.baseUrl}/${id}`, value);
   }
+
+  getRecentlyAddedAuctions(){
+    return this.http.get(`${this.baseUrl}/recently`);
+  }
+
+  getEndingAuctions(){
+    return this.http.get(`${this.baseUrl}/ending`);
+  }
+
+  getRecentlyEndedAuctions(){
+    return this.http.get(`${this.baseUrl}/recentlyEnded`);
+  }
+
 }
