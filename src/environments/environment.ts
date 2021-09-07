@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   env: 'LOCAL',
-  baseAPIUrl: 'http://localhost:8080/api/v1',
+  baseAPIUrl: 'http://localhost:8181/api/v1',
   api: {
     user: 'users',
     address: 'addresses',

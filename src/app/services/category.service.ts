@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Auction } from '../models/auction';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,8 @@ export class CategoryService {
 
   updateCategoryById(id: number, value: any): Observable<Object> {
     return this.http.put<Object>(`${this.baseUrl}/${id}`, value);
+  }
+  getAuctionsByCategoryId(id: number): Observable<Auction[]>{
+    return this.http.get<Auction[]>(`${this.baseUrl}/${id}/auctions`);
   }
 }

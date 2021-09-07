@@ -1,6 +1,9 @@
+import { Category } from './../../../models/category';
 import { AuctionService } from '../../../services/auction.service';
 import { Auction } from '../../../models/auction';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-auction-list',
@@ -9,17 +12,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuctionListComponent implements OnInit {
   auctions:Auction[];
+  categories:Category[];
 
-  constructor(private auctionService:AuctionService) { }
-
-  ngOnInit(): void {
-    this.getAllAuctions();
+  constructor(private router: Router,private categoryService: CategoryService,private activatedRoute: ActivatedRoute) { 
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
-  private getAllAuctions() {
-    this.auctionService.getAllAuctions()
-      .subscribe(data => {
+  ngOnInit(): void {
+    this.getAuctionsByCategoryId(this.activatedRoute.snapshot.params.id);
+  }
+
+  getAuctionsByCategoryId(id:number){
+    this.categoryService.getAuctionsByCategoryId(id).subscribe(
+      data => {
         this.auctions = data;
-      });
+      }, error => console.log(error)
+    );
   }
 }

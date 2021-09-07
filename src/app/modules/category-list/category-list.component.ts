@@ -37,7 +37,6 @@ export class CategoryListComponent extends OnDestroyMixin  implements OnInit {
       }, (error) => {
         console.error(error);
       });
-
       this.initStatesAutocomplete();
   }
 
@@ -71,5 +70,4 @@ export class CategoryListComponent extends OnDestroyMixin  implements OnInit {
     const category = this.categoriesHash[id];
     return category ? `${category.name}` : id;
   }
-
 }

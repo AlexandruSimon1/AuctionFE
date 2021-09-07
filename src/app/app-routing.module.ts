@@ -10,15 +10,13 @@ import { RegisterComponent } from './modules/register/register.component';
 import { AuthenticationGuard } from './authentication/authentication.guard';
 
 const routes: Routes = [
-
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  {path: '', component: HomeComponent},
   {path: 'users/:id', component: ProfileComponent},
   {path: 'user/edit/:id', component: RegisterComponent},
   { path: '', component: HomeComponent },
   { path: 'auction/:id', component: AuctionDetailComponent },
-  { path: 'category/:id', component: AuctionListComponent, pathMatch: 'full' },
+  { path: 'category/:id', component: AuctionListComponent, pathMatch: 'full'},
   { path: 'auction/:id', component: AuctionDetailComponent, canActivate: [AuthenticationGuard]},
    { path: '', redirectTo: '/', pathMatch: 'full' }
 ];
