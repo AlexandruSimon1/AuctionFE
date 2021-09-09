@@ -1,13 +1,13 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span><a href="/">Home</a></span>
-    <button mat-button [matMenuTriggerFor]="menu" >Categories</button>
+    <span><button class="home-button" matTooltip="Home" mat-button routerLink="/"><mat-icon>home</mat-icon></button></span>
+    <button mat-button [matMenuTriggerFor]="menu" >Shop by category</button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item *ngFor = "let category of categories" [routerLink] = "['/category',category.id]">{{category.name}}</button>
     </mat-menu>
     <span class="spacer"></span>
-    <a mat-button routerLink="/register">Register</a>
-    <a mat-button routerLink="/login">Login</a>
+    <button matTooltip="Register" mat-button routerLink="/register"><mat-icon>perm_identity</mat-icon></button>
+    <button matTooltip="Login" mat-button routerLink="/login"><mat-icon>login</mat-icon></button>
   </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>
