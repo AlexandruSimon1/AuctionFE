@@ -1,20 +1,20 @@
 <mat-toolbar>
-    <span>LOGIN</span>
-  </mat-toolbar>
-  <mat-card class="my-card">
-    <mat-card-content>
-        <mat-form-field class="full-width">
-          <mat-label>Email</mat-label>
-          <input  matInput  placeholder="Email" name="email">
-        </mat-form-field>
-      <br/>
-        <mat-form-field class="full-width">
-          <mat-label>Password</mat-label>
-          <input  matInput  placeholder="Password" name="password">
-        </mat-form-field>
-      <br/>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary">LOGIN</button>
-    </mat-card-actions>
-  </mat-card>
+  <span>LOGIN</span>
+</mat-toolbar>
+<mat-card class="my-card">
+  <mat-card-content>
+    <mat-form-field class="full-width">
+      <mat-label>Username</mat-label>
+      <input matInput placeholder="Username" id="username" required [(ngModel)]="user.username" name="username">
+    </mat-form-field>
+    <br />
+    <mat-form-field class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Password" id="password" required [(ngModel)]="user.password" name="password">
+    </mat-form-field>
+    <br />
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="login()">LOGIN</button>
+  </mat-card-actions>
+</mat-card>

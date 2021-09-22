@@ -9,14 +9,14 @@ import { CategoryService } from './services/category.service';
 export class AppComponent {
   title = 'AuctionFE';
   public categories;
-  constructor(private categoryService : CategoryService){
+  constructor(private categoryService: CategoryService) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.getCategories();
   }
 
-  getCategories(){
+  getCategories() {
     this.categoryService.getAllCategories().subscribe(
       data => this.categories = data,
       err => console.log(err)
