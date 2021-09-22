@@ -9,7 +9,7 @@ import { CategoryService } from './../../services/category.service';
   templateUrl: './category-list.component.html',
   styleUrls: ['./category-list.component.scss']
 })
-export class CategoryListComponent extends OnDestroyMixin  implements OnInit {
+export class CategoryListComponent extends OnDestroyMixin implements OnInit {
   categories: any;
 
   allCategories = [];
@@ -21,8 +21,7 @@ export class CategoryListComponent extends OnDestroyMixin  implements OnInit {
   categoryInputControl = new FormControl('');
   constructor(private categoryService: CategoryService) {
     super();
-   }
-
+  }
 
   ngOnInit(): void {
     this.categoryService.getAllCategories()
@@ -37,7 +36,7 @@ export class CategoryListComponent extends OnDestroyMixin  implements OnInit {
       }, (error) => {
         console.error(error);
       });
-      this.initStatesAutocomplete();
+    this.initStatesAutocomplete();
   }
 
   initStatesAutocomplete() {

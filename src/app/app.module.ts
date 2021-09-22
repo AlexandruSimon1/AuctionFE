@@ -21,6 +21,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatTableModule } from '@angular/material/table';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 //Components
 import { RegisterComponent } from './modules/register/register.component';
@@ -51,9 +53,13 @@ import { CategoryService } from './services/category.service';
     UserEditComponent
   ],
   imports: [
+    CommonModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatSidenavModule,
+    MatTableModule,
     MatSliderModule,
     MatToolbarModule,
     MatButtonModule,
