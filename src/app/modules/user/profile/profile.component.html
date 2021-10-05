@@ -1,21 +1,34 @@
 <br>
-<h1> Welcome, {{user.name}}! </h1>
-<br>
+<h1> Welcome, {{user.firstName}} {{user.lastName}}! </h1>
 <table class="table table-bordered">
-  <tr> <h2> Account Information </h2> </tr>
-  <tr> <h3> <b> Account Name:</b>  {{user.name}}</h3> </tr>
-  <tr> <h3> <b> Email Address: </b> {{user.email}} </h3> </tr>
-  <tr> <h3> <b> Account Creation Date:</b> {{user.creationDate}} </h3></tr>
-  <tr> <button class="btn btn-primary btn-lgn" routerLink="/user/edit/{{user.id}}"> Edit Details </button> </tr>
-  <br>
-</table>
-
-<br>
-
-<table class="table table-bordered">
-  <tr> <h2> Biddings </h2> </tr>
-  <tr *ngFor="let bidding of biddings">
-    <td> <h3> <b> Auction name: </b> <a href="http://localhost:4200/auction/{{bidding.auction.id}}" target="_blank" >{{bidding.auction.title}} </a></h3></td>
-    <td><h3> Auction end date: {{bidding.auction.endDate}}</h3></td>
+  <tr>
+    <h4> Account Information </h4>
   </tr>
+  <tr>
+    <span> Account Name: {{user.username}}</span>
+  </tr>
+  <tr>
+    <span> First Name: {{user.firstName}}</span>
+  </tr>
+  <tr>
+    <span> Last Name: {{user.lastName}}</span>
+  </tr>
+  <tr>
+    <span> Email Address: {{user.email}}</span>
+  </tr>
+  <tr>
+    <span> Account Creation Date: {{user.creationDate | date:'EEEE h:mm a'}}</span>
+  </tr>
+  <tr> <button class="btn btn-primary btn-lgn" routerLink="/user/edit/{{user.id}}"> Edit User Details </button> </tr>
+  <tr> <button class="btn btn-primary btn-lgn" routerLink="/user/address"> Address Details </button> </tr>
+</table>
+<br>
+<a [routerLink]="['/user/bidding']" class="bidding-route"> Biddings </a>
+<table class="table table-bordered">
+  <div *ngFor="let bidding of biddings">
+    <img class="img-fluid img-thumbnail" src="/assets/images/{{bidding.auction.photos}}" style="height: 150px;"
+      alt=""><br>
+    <span>Auction name: {{bidding.auction.title}}</span><br>
+    <span>End Date: {{bidding.auction.endDate | date:'EEEE h:mm a'}}</span>
+  </div>
 </table>

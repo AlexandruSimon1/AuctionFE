@@ -1,13 +1,32 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span><button class="home-button" matTooltip="Home" mat-button routerLink="/"><mat-icon>home</mat-icon></button></span>
-    <button mat-button [matMenuTriggerFor]="menu" >Shop by category</button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item *ngFor = "let category of categories" [routerLink] = "['/category',category.id]">{{category.name}}</button>
+    <span><button class="home-button" matTooltip="Home" mat-button routerLink="/">
+        <mat-icon>home</mat-icon>
+      </button></span>
+    <button class="menuCategory" mat-button [matMenuTriggerFor]="menu1">Shop by category</button>
+    <mat-menu class="menu-category" #menu1="matMenu">
+      <button mat-menu-item *ngFor="let category of categories"
+        [routerLink]="['/category',category.id]">{{category.name}}</button>
     </mat-menu>
     <span class="spacer"></span>
-    <button matTooltip="Register" mat-button routerLink="/register"><mat-icon>perm_identity</mat-icon></button>
-    <button matTooltip="Login" mat-button routerLink="/login"><mat-icon>login</mat-icon></button>
+    <button *ngIf="!currentUser" matTooltip="Register" mat-button routerLink="/register">
+      <mat-icon>perm_identity</mat-icon>
+    </button>
+    <button *ngIf="!currentUser" matTooltip="Login" mat-button routerLink="/login">
+      <mat-icon>login</mat-icon>
+    </button>
+    <button *ngIf="currentUser" class="menuButton" mat-button [matMenuTriggerFor]="menu2" #menuTrigger="matMenuTrigger"
+      (mouseover)="menuTrigger.openMenu()">My Menu</button>
+    <mat-menu class="menu-button" #menu2="matMenu" [overlapTrigger]="true">
+      <!-- <span (mouseleave)="menuTrigger.closeMenu()"></span> -->
+      <!-- Here should be user.id from logged user -->
+      <button mat-menu-item [routerLink]="['/profile']">My Account</button>
+      <button mat-menu-item [routerLink]="['/user/bidding']">Biddings</button>
+      <button mat-menu-item [routerLink]="['/user/purchasing']">Purchases</button>
+      <button mat-menu-item [routerLink]="['/auction']">Create New Auction</button>
+      <button mat-menu-item (click)="logout()">Log Out</button>
+    </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
+<br>
 <router-outlet></router-outlet>

@@ -9,16 +9,16 @@ import { environment } from 'src/environments/environment';
 })
 export class BiddingService {
   private baseUrl = `${environment.baseAPIUrl}/${environment.api.bidding}`;
-  
+
   constructor(private http: HttpClient) { }
 
   getAllBiddings(): Observable<Bidding[]> {
     return this.http.get<Bidding[]>(`${this.baseUrl}`);
   }
 
-  // getBiddingById(id: number): Observable<Bidding> {
-  //   return this.http.get<Bidding>(`${this.baseUrl}/${id}`);
-  // }
+  getBiddingById(id: number): Observable<Bidding> {
+    return this.http.get<Bidding>(`${this.baseUrl}/${id}`);
+  }
 
   deleteBiddingById(id: number): Observable<Object> {
     return this.http.delete<Object>(`${this.baseUrl}/${id}`);
@@ -30,9 +30,5 @@ export class BiddingService {
 
   updateBiddingById(id: number, value: any): Observable<Object> {
     return this.http.put<Object>(`${this.baseUrl}/${id}`, value);
-  }
-  
-  getBiddingsByUserId(id: number) {
-    return this.http.get(`${this.baseUrl}/${id}`);
   }
 }

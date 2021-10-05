@@ -9,7 +9,6 @@ import { environment } from 'src/environments/environment';
 })
 export class AddressService {
   private baseUrl = `${environment.baseAPIUrl}/${environment.api.address}`;
-  private documentUrl = `https://devins.amerisourcebergen.com/documentmanagement/Fusion/Doc/getdocument?RootFolder=Clients&ClientName=Bayer&SubFolder=202103&getfromFolder=&FileName=c8165a70-59d4-43a6-9222-22b9e4046e6e.PDF&env=MJR2_DEV`;
 
   constructor(private http: HttpClient) { }
 
@@ -31,8 +30,5 @@ export class AddressService {
 
   updateAddressById(id: number, value: any): Observable<Object> {
     return this.http.put<Object>(`${this.baseUrl}/${id}`, value);
-  }
-  getDocument(): Observable<Object[]>{
-    return this.http.get<Object[]>(`${this.documentUrl}`);
   }
 }
