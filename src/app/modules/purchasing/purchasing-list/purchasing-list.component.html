@@ -1,0 +1,18 @@
+<div class="container">
+    <hr class="mt-2 mb-5">
+    <div class="row text-center text-lg-left">
+        <div class="col-lg-3 col-md-4 col-6" *ngFor="let purchasing of purchases">
+            <a class="d-block mb-4 h-100 text-center">
+                <img class="img-fluid img-thumbnail" src="/assets/images/{{purchasing.auction.photos}}"
+                    style="height: 150px;" alt="">
+                <br>
+                <span>Title: </span>
+                <span>{{purchasing.auction.title}}</span><br>
+                <span>Price: </span>
+                <span>{{purchasing.auction.minimumPrice}}</span><br>
+                <span>End in:</span>
+                <span>{{purchasing.auction.endDate | date:'EEEE h:mm a'}}</span>
+            </a>
+        </div>
+    </div>
+</div>

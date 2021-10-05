@@ -1,7 +1,7 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/models/user';
-import { AuthorizationService } from './../../services/authorization.service';
 import { Component, OnInit } from '@angular/core';
+import { AuthorizationService } from 'src/app/services/authorization.service';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +10,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
   user: User = new User();
-  submitted = false;
   constructor(private authorizationService: AuthorizationService, 
               private router: Router, 
               private route: ActivatedRoute) { }
@@ -25,7 +24,6 @@ export class RegisterComponent implements OnInit {
         this.user = new User();
       },
         error => console.log(error));
-    this.submitted = true;
     this.router.navigate([''], { relativeTo: this.route });
   }
 }

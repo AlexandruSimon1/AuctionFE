@@ -11,8 +11,8 @@ export class AuctionThumbailComponent implements OnInit {
   public recentlyAuctions;
   public endingAuctions;
   public recentlyEndedAuctions;
-   
-  constructor(private auctionService : AuctionService) { }
+
+  constructor(private auctionService: AuctionService) { }
 
   ngOnInit(): void {
     this.getAuctions();
@@ -21,27 +21,27 @@ export class AuctionThumbailComponent implements OnInit {
     this.getRecentlyEnded();
   }
 
-  getAuctions( ){
+  getAuctions() {
     this.auctionService.getAllAuctions().subscribe(
-      data  => this.auctions = data,
+      data => this.auctions = data,
       err => console.error(err)
     );
   }
-  getRecentlyAuctions(){
+  getRecentlyAuctions() {
     this.auctionService.getRecentlyAddedAuctions().subscribe(
       data => this.recentlyAuctions = data,
       err => console.error(err)
     );
   }
-  
-  getEndingAuctions(){
+
+  getEndingAuctions() {
     this.auctionService.getEndingAuctions().subscribe(
       data => this.endingAuctions = data,
       err => console.error(err)
     );
   }
 
-  getRecentlyEnded(){
+  getRecentlyEnded() {
     this.auctionService.getRecentlyEndedAuctions().subscribe(
       data => this.recentlyEndedAuctions = data,
       err => console.error(err)

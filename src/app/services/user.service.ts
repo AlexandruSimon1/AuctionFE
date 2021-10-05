@@ -1,15 +1,18 @@
+import { Purchasing } from './../models/purchasing';
 import { User } from './../models/user';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { Bidding } from '../models/bidding';
+import { Address } from '../models/address';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   private baseUrl = `${environment.baseAPIUrl}/${environment.api.user}`;
-  
+
   constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<User[]> {
@@ -30,5 +33,16 @@ export class UserService {
 
   updateUserById(id: number, value: any): Observable<Object> {
     return this.http.put<Object>(`${this.baseUrl}/${id}`, value);
+  }
+  getBiddingsByUserId(id: number): Observable<Bidding[]> {
+    return this.http.get<Bidding[]>(`${this.baseUrl}/${id}/bidding`);
+  }
+
+  getPurchasesByUserId(id: number): Observable<Purchasing[]> {
+    return this.http.get<Purchasing[]>(`${this.baseUrl}/${id}/purchasing`);
+  }
+
+  getAddressesByUserId(id: number): Observable<Address[]> {
+    return this.http.get<Address[]>(`${this.baseUrl}/${id}/addresses`);
   }
 }

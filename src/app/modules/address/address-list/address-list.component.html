@@ -1,0 +1,12 @@
+<div class="container">
+    <hr class="mt-2 mb-5">
+    <div class="row text-center text-lg-left">
+        <div class="col-lg-3 col-md-4 col-6" *ngFor="let address of addresses">
+            <span>City: {{address.city}}</span><br>
+            <span>Province: {{address.province}}</span><br>
+            <span>Address: {{address.address}}</span>
+        </div>
+        <button class="btn btn-primary btn-lgn" routerLink="/update/address"> Update Current Address </button> 
+        <button class="btn btn-primary btn-lgn" routerLink="/create/address"> Add New Address </button> 
+    </div>
+</div>

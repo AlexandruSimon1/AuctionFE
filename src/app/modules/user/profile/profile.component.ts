@@ -1,8 +1,6 @@
-import { AddressService } from './../../../services/address.service';
-import { BiddingService } from './../../../services/bidding.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-profile',
@@ -13,14 +11,14 @@ export class ProfileComponent implements OnInit {
   public user;
   public biddings;
   public address;
-
-  constructor(private userService: UserService,private addressService: AddressService, private activatedRoute: ActivatedRoute, private biddingService: BiddingService) {
+  currentUser: User;
+  private id;
+  constructor(private userService: UserService) {
   }
 
   ngOnInit(): void {
-    this.getUser(this.activatedRoute.snapshot.params.id);
-    this.getUserBiddings(this.activatedRoute.snapshot.params.id);
-    this.getDocument();
+    this.getUser(this.id);
+    this.getUserBiddings(1);
   }
   getUser(id: number){
     this.userService.getUserById(id).subscribe(
@@ -31,20 +29,12 @@ export class ProfileComponent implements OnInit {
     );
   }
   getUserBiddings(id: number){
-    this.biddingService.getBiddingsByUserId(id).subscribe(
+    this.userService.getBiddingsByUserId(id).subscribe(
       data => {
         this.biddings = data;
       },
         error => console.log()
     );
   }
-
-  getDocument(){
-    this.addressService.getDocument().subscribe(data => {
-      debugger;
-      this.address = data;
-    });
-  }
-
 
 }
