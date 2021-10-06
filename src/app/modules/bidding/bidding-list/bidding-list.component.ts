@@ -1,6 +1,7 @@
 import { UserService } from 'src/app/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Bidding } from 'src/app/models/bidding';
+import { AuthenticationService } from 'src/app/security/authentication.service';
 
 @Component({
   selector: 'app-bidding-list',
@@ -9,10 +10,12 @@ import { Bidding } from 'src/app/models/bidding';
 })
 export class BiddingListComponent implements OnInit {
   biddings: Bidding[];
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+    private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
-    this.getBiddingsByUserId(1);
+    let currentUser = this.authenticationService.currentUserValue;
+    this.getBiddingsByUserId(currentUser.id);
   }
 
   getBiddingsByUserId(id: number) {

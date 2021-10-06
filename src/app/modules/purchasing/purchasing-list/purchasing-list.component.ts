@@ -1,6 +1,7 @@
 import { Purchasing } from './../../../models/purchasing';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { AuthenticationService } from 'src/app/security/authentication.service';
 
 @Component({
   selector: 'app-purchasing-list',
@@ -9,10 +10,12 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class PurchasingListComponent implements OnInit {
   purchases : Purchasing[];
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+    private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
-    this.getPurchasesByUserId(1);
+    let currentUser = this.authenticationService.currentUserValue;
+    this.getPurchasesByUserId(currentUser.id);
   }
 
   getPurchasesByUserId(id: number) {
