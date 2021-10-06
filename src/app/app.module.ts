@@ -51,10 +51,8 @@ import { UserEditComponent } from './modules/user/user-edit/user-edit.component'
 import { AuctionService } from './services/auction.service';
 import { CategoryService } from './services/category.service';
 import { AuctionDetailComponent } from './modules/auction/auction-detail/auction-detail.component';
-import { CreatePurchasingComponent } from './modules/purchasing/create-purchasing/create-purchasing.component';
 import { PurchasingListComponent } from './modules/purchasing/purchasing-list/purchasing-list.component';
 import { BiddingListComponent } from './modules/bidding/bidding-list/bidding-list.component';
-import { CreateBiddingComponent } from './modules/bidding/create-bidding/create-bidding.component';
 import { AddressListComponent } from './modules/address/address-list/address-list.component';
 import { CreateAddressComponent } from './modules/address/create-address/create-address.component';
 import { UpdateAddressComponent } from './modules/address/update-address/update-address.component';
@@ -73,10 +71,8 @@ import { JwtInterceptor } from './security/jwt.interceptor';
     AuctionThumbailComponent,
     AuctionListComponent,
     UserEditComponent,
-    CreatePurchasingComponent,
     PurchasingListComponent,
     BiddingListComponent,
-    CreateBiddingComponent,
     AddressListComponent,
     CreateAddressComponent,
     UpdateAddressComponent,

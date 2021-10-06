@@ -14,8 +14,8 @@
         <h5>Buy now price: {{auctions.buyNow}} USD</h5>
         <h5>Starting Bid: {{auctions.minimumPrice}} USD</h5>
         <h5>End date: {{auctions.endDate | date:'EEEE h:mm a'}}</h5>
-        <button mat-raised-button type="button" class="btn btn-primary btn-lg">New Bid</button>
-        <button mat-raised-button type="button" class="btn btn-primary btn-lg">Buy Now</button>
+        <button mat-raised-button type="button" class="btn btn-primary btn-lg" (click)="createBidding()">New Bid</button>
+        <button mat-raised-button type="button" class="btn btn-primary btn-lg" (click)="createPurchasing()">Buy Now</button>
       </aside>
     </div>
   </aside>
