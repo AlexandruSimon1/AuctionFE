@@ -9,5 +9,6 @@ export const environment = {
     bidding: 'biddings',
     category: 'categories',
     purchasing: 'purchases',
+    authorization: 'auth',
   }
 };

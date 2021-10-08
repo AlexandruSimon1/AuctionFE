@@ -9,7 +9,6 @@ import { User } from 'src/app/models/user';
 import { Auction } from 'src/app/models/auction';
 import { AuthenticationService } from 'src/app/security/authentication.service';
 import { Bidding } from 'src/app/models/bidding';
-import { __assign } from 'tslib';
 
 @Component({
   selector: 'app-auction-detail',
@@ -29,14 +28,14 @@ export class AuctionDetailComponent implements OnInit {
     private purchasingService: PurchasingService) { }
 
   ngOnInit(): void {
-    let currentUser = this.authenticationService.currentUserValue;
+    const currentUser = this.authenticationService.currentUserValue;
     this.getUser(currentUser.id);
     this.getAuction(this.activatedRoute.snapshot.params.id);
   }
 
   createBidding() {
-    let user = this.user;
-    let auction = this.auctions;
+    const user = this.user;
+    const auction = this.auctions;
     this.bidding = { auction, user };
     this.biddingService.createBidding(this.bidding).subscribe(() => {
       this.bidding = new Bidding();
@@ -45,8 +44,8 @@ export class AuctionDetailComponent implements OnInit {
   }
 
   createPurchasing() {
-    let user = this.user;
-    let auction = this.auctions;
+    const user = this.user;
+    const auction = this.auctions;
     this.purchasing = { auction, user };
     this.purchasingService.createPurchasing(this.purchasing).subscribe(() => {
       this.purchasing = new Purchasing();

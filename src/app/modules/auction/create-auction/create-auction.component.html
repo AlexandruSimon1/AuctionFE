@@ -21,16 +21,18 @@
       <mat-label>Buy Now Price</mat-label>
       <input matInput placeholder="Buy Now Price" id="buyNow" required [(ngModel)]="auction.buyNow" name="buyNow">
     </mat-form-field><br>
+    <!-- <mat-form-field class="full-width">
+      <mat-label>Auction Photo</mat-label>
+      <input matInput type="file" placeholder="Photos" id="photos" required [(ngModel)]="auction.photos" name="photos">
+    </mat-form-field><br> -->
     <mat-form-field>
       <mat-label>Categories</mat-label>
       <mat-select>
-          <mat-autocomplete #autoCategory="matAutocomplete" [displayWith]="displayCategories">
-              <mat-option *ngFor="let category of _filteredCategories" [value]="category.id">
-                  {{displayCategories(category.id)}}
-              </mat-option>
-          </mat-autocomplete>
+        <mat-option (click)="getCategoryById(category.id)" *ngFor="let category of categories" [value]="category.id">
+          {{category.name}}
+        </mat-option>
       </mat-select>
-   </mat-form-field><br>
-    <button type="submit" class="btn btn-success">Submit</button>
+    </mat-form-field><br>
+    <button type="submit" class="btn btn-success" (click)="save()">Submit</button>
   </mat-card-content>
 </mat-card>
