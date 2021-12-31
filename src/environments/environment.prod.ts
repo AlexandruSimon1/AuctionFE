@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   env: 'DEV',
-  baseAPIUrl: 'https://auction-backend-sys.herokuapp.com/api/v1',
+  baseAPIUrl: 'http://ec2-3-70-24-74.eu-central-1.compute.amazonaws.com/api/v1',
   api: {
     user: 'users',
     address: 'addresses',
