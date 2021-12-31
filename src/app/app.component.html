@@ -18,8 +18,6 @@
     <button *ngIf="currentUser" class="menuButton" mat-button [matMenuTriggerFor]="menu2" #menuTrigger="matMenuTrigger"
       (mouseover)="menuTrigger.openMenu()">My Menu</button>
     <mat-menu class="menu-button" #menu2="matMenu" [overlapTrigger]="true">
-      <!-- <span (mouseleave)="menuTrigger.closeMenu()"></span> -->
-      <!-- Here should be user.id from logged user -->
       <button mat-menu-item [routerLink]="['/profile']">My Account</button>
       <button mat-menu-item [routerLink]="['/user/bidding']">Biddings</button>
       <button mat-menu-item [routerLink]="['/user/purchasing']">Purchases</button>
