@@ -4,13 +4,15 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Auction } from '../models/auction';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
   private baseUrl = `${environment.baseAPIUrl}/${environment.api.category}`;
-  
+  private headers= new HttpHeaders()
+  .set('Access-Control-Allow-Origin', 'http://localhost:4200');
   constructor(private http: HttpClient) { }
 
   getAllCategories(): Observable<Category[]> {
