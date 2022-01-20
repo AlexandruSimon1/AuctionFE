@@ -75,7 +75,8 @@
             "browserTarget": "AuctionFE:build",
             "proxyConfig": "proxy.config.json",
             "ssl": true,
-            "sslCert": "../ssl/https-system-api.p12"
+            "sslCert": "../ssl/https-system-api.crt",
+            "sslKey": "../ssl/https-system-api.pem"
           },
           "configurations": {
             "production": {
