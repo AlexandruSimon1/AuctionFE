@@ -1,7 +1,7 @@
 # Stage 1, build stage
 FROM ubuntu:latest
-FROM node:12.16.0-buster-slim as build
 WORKDIR /app
+FROM node:12.16.0-buster-slim as build
 RUN ls -l
 COPY package*.json /app/
 RUN npm install
