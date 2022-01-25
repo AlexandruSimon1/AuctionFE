@@ -72,11 +72,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "AuctionFE:build",
-            "proxyConfig": "proxy.config.json",
-            "ssl": true,
-            "sslCert": "../ssl/https-system-api.crt",
-            "sslKey": "../ssl/https-system-api.pem"
+            "browserTarget": "AuctionFE:build"
           },
           "configurations": {
             "production": {

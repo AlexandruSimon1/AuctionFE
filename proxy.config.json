@@ -1,6 +1,0 @@
-{
-    "/api": {
-        "target": "https://ec2-3-70-24-74.eu-central-1.compute.amazonaws.com:443",
-        "secure": false
-    }
-}
