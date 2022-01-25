@@ -2,7 +2,7 @@
 FROM ubuntu:latest
 WORKDIR /app
 FROM node:12.16.0-buster-slim as build
-COPY package*.json /app/
+COPY package.json /app/
 RUN npm install
 COPY ./ /app/
 RUN npm run build -- --configuration=production
