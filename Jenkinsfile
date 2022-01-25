@@ -1,5 +1,5 @@
 pipeline {
-    agent docker {
+    agent {
             image 'node:lts-bullseye-slim' 
             args '-p 3000:3000' 
         }
