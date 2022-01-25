@@ -1,9 +1,10 @@
 # Stage 1, build stage
+FROM ubuntu:latest
+WORKDIR /app
 FROM node:12.16.0-buster-slim as build
-WORKDIR /opt
-COPY package*.json /opt/
+COPY package*.json /app/
 RUN npm install
-COPY ./ /opt/
+COPY ./ /app/
 RUN npm run build -- --configuration=production
 
 # stage 2 nginx server for built files
