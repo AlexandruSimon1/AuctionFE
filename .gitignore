@@ -1,47 +1,60 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
-# compiled output
-/dist
-/tmp
-/out-tsc
-# Only exists if Bazel was run
-/bazel-out
-
-# dependencies
-/node_modules
-
-# profiling files
-chrome-profiler-events*.json
-speed-measure-plugin*.json
-
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
-
-# misc
-/.angular/cache
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
-
-# System Files
-.DS_Store
-Thumbs.db
+# Created by .ignore support plugin (hsz.mobi)
+build
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+pids
+*.pid
+*.seed
+*.pid.lock
+lib-cov
+coverage
+*.lcov
+.nyc_output
+.grunt
+bower_components
+.lock-wscript
+build/Release
+node_modules/
+jspm_packages/
+typings/
+*.tsbuildinfo
+.npm
+.eslintcache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+.node_repl_history
+*.tgz
+.yarn-integrity
+.env
+.env.test
+.cache
+.next
+.nuxt
+dist
+.cache/
+.vuepress/dist
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.idea/
+cmake-build-*/
+.idea/**/mongoSettings.xml
+*.iws
+out/
+.idea_modules/
+atlassian-ide-plugin.xml
+.idea/replstate.xml
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+.idea/httpRequests
+.idea/caches/build_file_checksums.ser
