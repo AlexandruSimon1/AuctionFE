@@ -1,8 +1,9 @@
 # Stage 1, build stage
 FROM ubuntu:latest
-WORKDIR /app
 FROM node:12.16.0-buster-slim as build
-COPY package.json /app/
+WORKDIR /app
+RUN ls -l
+COPY package*.json /app/
 RUN npm install
 COPY ./ /app/
 RUN npm run build -- --configuration=production
