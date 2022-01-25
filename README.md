@@ -27,4 +27,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## GitHub Pages Deployment
-For GitHub Pages Deployment use this ng build --configuration production --output-path docs --base-href https://www.auction-simon-project.page/
+For GitHub Pages Deployment use this ng build --configuration production --output-path docs --base-href https://auction-simon-project.page/
