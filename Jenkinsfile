@@ -36,14 +36,14 @@ pipeline {
                             sshCommand remote: remote, command: 'docker rm -v auction-ui'
                             sshCommand remote: remote, command: "docker rmi ${dockerLogin}/auction-ui:latest"
                             sshCommand remote: remote, command: "docker login | docker pull ${dockerLogin}/auction-ui"
-                            sshCommand remote: remote, command: "docker container run -d -p 4100:4200 --name auction-ui ${dockerLogin}/auction-ui"
+                            sshCommand remote: remote, command: "docker container run -d -p 80:4200 --name auction-ui ${dockerLogin}/auction-ui"
                             sshCommand remote: remote, command: 'exit'
                     }
                         timeout(time: 90, unit: 'SECONDS') {
                         waitUntil(initialRecurrencePeriod: 2000) {
                             script {
                                 def result =
-                                sh script: 'curl -k --silent --output /dev/null http://localhost:4100',
+                                sh script: 'curl -k --silent --output /dev/null http://${host}:80',
                                 returnStatus: true
                                 return (result == 0)
                             }
