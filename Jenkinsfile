@@ -36,7 +36,7 @@ pipeline {
                             sshCommand remote: remote, command: 'docker rm -v auction-ui'
                             sshCommand remote: remote, command: "docker rmi ${dockerLogin}/auction-ui:latest"
                             sshCommand remote: remote, command: "docker login | docker pull ${dockerLogin}/auction-ui"
-                            sshCommand remote: remote, command: "docker container run -d -p 80:80 --name auction-ui ${dockerLogin}/auction-ui"
+                            sshCommand remote: remote, command: "docker container run -d -p 80:80 --name http-auction-ui ${dockerLogin}/auction-ui && docker container run -d -p 443:443 --name https-auction-ui ${dockerLogin}/auction-ui"
                             sshCommand remote: remote, command: 'exit'
                     }
                         timeout(time: 90, unit: 'SECONDS') {
