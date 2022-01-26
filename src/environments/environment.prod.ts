@@ -1,7 +1,7 @@
 export const environment = {
-  production: true,
+  production: false,
   env: 'DEV',
-  baseAPIUrl: 'http://localhost:80/auction-system-api/api/v1',
+  baseAPIUrl: 'http://localhost:82/auction-system-api/api/v1',
   api: {
     user: 'users',
     address: 'addresses',
