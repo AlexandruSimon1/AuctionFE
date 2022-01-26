@@ -1,5 +1,5 @@
 # Stage 1, build stage
-FROM node:12.16.0-buster-slim as build
+FROM node:16.13.0-buster-slim as build
 WORKDIR app
 COPY package*.json /app/
 RUN npm install
