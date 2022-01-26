@@ -1,6 +1,6 @@
 # Stage 1, build stage
 FROM node:12.16.0-buster-slim as build
-RUN bash -c 'cd ~/app'
+WORKDIR app
 COPY package*.json /app/
 RUN npm install
 COPY ./ /app/
