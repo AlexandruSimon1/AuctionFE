@@ -19,7 +19,8 @@ pipeline {
         }
                 stage('Deploy On AWS EC2 Instance') {
                     steps {
-                        withCredentials([usernamePassword(credentialsId: 'Docker', usernameVariable: 'dockerLogin',
+                        withCredentials([string(credentialsId: 'Auction-EC2-URL',variable: "host"),
+                                        usernamePassword(credentialsId: 'Docker', usernameVariable: 'dockerLogin',
                                             passwordVariable: 'dockerPassword'),
                                         sshUserPrivateKey(credentialsId: 'AWS-Keypair', keyFileVariable: 'identity', passphraseVariable: '',
                                         usernameVariable: 'userName')
