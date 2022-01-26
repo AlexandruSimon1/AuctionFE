@@ -32,7 +32,7 @@ pipeline {
                             remote.name = userName
                             remote.identityFile = identity
                             remote.allowAnyHosts = 'true'
-                            sshCommand remote: remote, command: 'docker container kill --signal=SIGHUP auction-ui'
+                            sshCommand remote: remote, command: 'docker container kill auction-ui'
                             sshCommand remote: remote, command: 'docker rm -v auction-ui'
                             sshCommand remote: remote, command: "docker rmi ${dockerLogin}/auction-ui:latest"
                             sshCommand remote: remote, command: "docker login | docker pull ${dockerLogin}/auction-ui"
