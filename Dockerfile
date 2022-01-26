@@ -14,3 +14,6 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/docs/ /usr/share/nginx/html
+ADD wrapper.sh wrapper.sh
+RUN bash -c 'chmod +x /wrapper.sh'
+ENTRYPOINT ["/usr/bin/bash", "/wrapper.sh"]

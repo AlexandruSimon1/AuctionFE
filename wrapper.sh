@@ -1,0 +1,1 @@
+ng serve --host 0.0.0.0 --port 80 --publicHost http://ec2-18-192-56-140.eu-central-1.compute.amazonaws.com/
