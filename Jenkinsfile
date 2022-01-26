@@ -32,8 +32,8 @@ pipeline {
                             remote.name = userName
                             remote.identityFile = identity
                             remote.allowAnyHosts = 'true'
-                            sshCommand remote: remote, command: 'docker container kill --signal=SIGHUP auction-ui'
-                            sshCommand remote: remote, command: 'docker rm -v auction-ui'
+//                            sshCommand remote: remote, command: 'docker container kill --signal=SIGHUP auction-ui'
+//                            sshCommand remote: remote, command: 'docker rm -v auction-ui'
                             sshCommand remote: remote, command: "docker rmi ${dockerLogin}/auction-ui:latest"
                             sshCommand remote: remote, command: "docker login | docker pull ${dockerLogin}/auction-ui"
                             sshCommand remote: remote, command: "docker container run -d -p 4100:4200 --name auction-ui ${dockerLogin}/auction-ui"
@@ -56,7 +56,7 @@ pipeline {
         stage('Clean Docker Images') {
             steps {
                 echo 'Starting Deleting Created Docker Images'
-                sh script: 'docker rmi $(docker images -q)'
+                sh script: 'docker rmi -f $(docker images -q)'
             }
         }
     }
