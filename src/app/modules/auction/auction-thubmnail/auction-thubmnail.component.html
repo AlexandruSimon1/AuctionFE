@@ -1,59 +1,45 @@
-<div class="container text-center align-items-center">
-  <mat-card-header mat-card-title class="font-weight-light text-center text-lg-center mt-4 mb-0">Recently added auctions
-  </mat-card-header>
+<div class="container">
+  <mat-card-title class="headerTitle font-weight-light text-lg-center">Recently added auctions
+  </mat-card-title>
   <hr class="mt-2 mb-5 text-lg-center">
   <div class="row text-center text-lg-center">
-    <mat-card-content class="col-lg-3 col-md-4 col-6" *ngFor="let recentlyAuction of recentlyAuctions">
+    <mat-card-content class="auctionDisplay col-lg-3 col-md-4 col-6" *ngFor="let recentlyAuction of recentlyAuctions">
       <a [routerLink]="['/auction', recentlyAuction.id]" class="d-block mb-4 h-100 text-center">
-        <img class="img-thumbnail" src="/assets/images/{{recentlyAuction.photos}}" style="height: 150px;"
-          alt="">
+        <img class="img-thumbnail" src="/assets/images/{{recentlyAuction.photos}}" style="height: 150px;" alt="">
         <br>
-        <span>{{recentlyAuction.title}}</span><br>
-        <span>Starting bid: </span>
-        <span>{{recentlyAuction.minimumPrice}}</span><br>
-        <span>Buy It Now: </span>
-        <span>{{recentlyAuction.buyNow}}</span><br>
-        <span>End in: </span>
-        <span>{{recentlyAuction.endDate | date:'EEEE h:mm a'}}</span><br>
-      </a>
+        <span>{{recentlyAuction.title}}</span><br></a>
+      <span>Starting bid: {{recentlyAuction.minimumPrice}} USD</span><br>
+      <span>Buy It Now: {{recentlyAuction.buyNow}} USD</span><br>
+      <span>End in: {{recentlyAuction.endDate | date:'EEEE, MMMM d, h:mm:ss a'}}</span><br>
     </mat-card-content>
   </div>
-    <mat-card-header mat-card-title="Ending auctions" class="font-weight-light text-center text-lg-left mt-4 mb-0">
-      Ending auctions</mat-card-header>
-    <hr class="mt-2 mb-5">
-    <div class="row text-center text-lg-left">
-      <mat-card-content class="col-lg-3 col-md-4 col-6" *ngFor="let endingAuction of endingAuctions">
-        <a [routerLink]="['/auction', endingAuction.id]" class="d-block mb-4 h-100 text-center">
-          <img class="img-thumbnail" src="/assets/images/{{endingAuction.photos}}" style="height: 150px;"
-            alt="">
-          <br>
-          <span>{{endingAuction.title}}</span><br>
-          <span>Starting bid: </span>
-          <span>{{endingAuction.minimumPrice}}</span><br>
-          <span>Buy It Now: </span>
-          <span>{{endingAuction.buyNow}}</span><br>
-          <span>End in: </span>
-          <span>{{endingAuction.endDate | date:'EEEE h:mm a'}}</span><br>
-        </a>
-      </mat-card-content>
-    </div>
-  <mat-card-header mat-card-title class="font-weight-light text-center text-lg-left mt-4 mb-0">Recently ended auctions
+  <mat-card-header mat-card-title="Ending auctions" class="headerTitle font-weight-light text-lg-left mt-4 mb-0">
+    Ending auctions</mat-card-header>
+  <hr class="mt-2 mb-5">
+  <div class="row text-center text-lg-left">
+    <mat-card-content class="auctionDisplay col-lg-3 col-md-4 col-6" *ngFor="let endingAuction of endingAuctions">
+      <a [routerLink]="['/auction', endingAuction.id]" class="d-block mb-4 h-100 text-center">
+        <img class="img-thumbnail" src="/assets/images/{{endingAuction.photos}}" style="height: 150px;" alt="">
+        <br>
+        <span>{{endingAuction.title}}</span><br></a>
+      <span>Starting bid: {{endingAuction.minimumPrice}} USD</span><br>
+      <span>Buy It Now: {{endingAuction.buyNow}} USD</span><br>
+      <span>End in: >{{endingAuction.endDate | date:'EEEE, MMMM d, h:mm:ss a'}}</span><br>
+    </mat-card-content>
+  </div>
+  <mat-card-header mat-card-title class="headerTitle font-weight-light text-lg-left mt-4 mb-0">Recently ended auctions
   </mat-card-header>
   <hr class="mt-2 mb-5">
   <div class="row text-center text-lg-left">
-    <mat-card-content class="col-lg-3 col-md-4 col-6" *ngFor="let recentlyEndedAuction of recentlyEndedAuctions">
+    <mat-card-content class="auctionDisplay col-lg-3 col-md-4 col-6"
+      *ngFor="let recentlyEndedAuction of recentlyEndedAuctions">
       <a [routerLink]="['/auction', recentlyEndedAuction.id]" class="d-block mb-4 h-100 text-center">
-        <img class="img-thumbnail" src="/assets/images/{{recentlyEndedAuction.photos}}" style="height: 150px;"
-          alt="">
+        <img class="img-thumbnail" src="/assets/images/{{recentlyEndedAuction.photos}}" style="height: 150px;" alt="">
         <br>
-        <span>{{recentlyEndedAuction.title}}</span><br>
-        <span>Starting bid: </span>
-        <span>{{recentlyEndedAuction.minimumPrice}}</span><br>
-        <span>Buy It Now: </span>
-        <span>{{recentlyEndedAuction.buyNow}}</span><br>
-        <span>End in: </span>
-        <span>{{recentlyEndedAuction.endDate | date:'EEEE h:mm a'}}</span><br>
-      </a>
+        <span>{{recentlyEndedAuction.title}}</span><br></a>
+      <span>Starting bid: {{recentlyEndedAuction.minimumPrice}} USD</span><br>
+      <span>Buy It Now: {{recentlyEndedAuction.buyNow}} USD</span><br>
+      <span>End in: {{recentlyEndedAuction.endDate | date:'EEEE, MMMM d, h:mm:ss a'}}</span><br>
     </mat-card-content>
   </div>
 </div>

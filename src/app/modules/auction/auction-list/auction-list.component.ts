@@ -1,5 +1,4 @@
 import { Category } from './../../../models/category';
-import { AuctionService } from '../../../services/auction.service';
 import { Auction } from '../../../models/auction';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,10 +10,11 @@ import { CategoryService } from 'src/app/services/category.service';
   styleUrls: ['./auction-list.component.scss']
 })
 export class AuctionListComponent implements OnInit {
-  auctions:Auction[];
-  categories:Category[];
+  auctions: Auction[];
+  categories: Category[];
+  category: Category;
 
-  constructor(private router: Router,private categoryService: CategoryService,private activatedRoute: ActivatedRoute) { 
+  constructor(private router: Router, private categoryService: CategoryService, private activatedRoute: ActivatedRoute) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
@@ -22,7 +22,12 @@ export class AuctionListComponent implements OnInit {
     this.getAuctionsByCategoryId(this.activatedRoute.snapshot.params.id);
   }
 
-  getAuctionsByCategoryId(id:number){
+  getAuctionsByCategoryId(id: number) {
+    this.categoryService.getCategoryById(id).subscribe(
+      data => {
+        this.category = data;
+      }, error => console.log(error)
+    );
     this.categoryService.getAuctionsByCategoryId(id).subscribe(
       data => {
         this.auctions = data;

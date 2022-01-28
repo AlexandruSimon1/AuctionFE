@@ -1,1 +1,18 @@
+.row {
+    display: flex;
+}
 
+.fill {
+    flex: 1;
+}
+
+.auctionDisplay {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.headerTitle {
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+}

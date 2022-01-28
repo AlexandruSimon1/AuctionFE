@@ -1,18 +1,16 @@
 <div class="container">
-<hr class="mt-2 mb-5">
-<div class="row text-center text-lg-left">
-    <div class="col-lg-3 col-md-4 col-6" *ngFor="let auction of auctions">
+  <mat-card-title class="headerTitle font-weight-light text-lg-center">{{category.name}}
+  </mat-card-title>
+  <hr class="mt-2 mb-5">
+  <div class="row text-center text-lg-left">
+    <div class=" auctionDisplay col-lg-3 col-md-4 col-6" *ngFor="let auction of auctions">
       <a [routerLink]="['/category/{{category.id}}/auctions']" class="d-block mb-4 h-100 text-center">
-        <img class="img-fluid img-thumbnail" src="/assets/images/{{auction.photos}}" style="height: 150px;"
-          alt="">
-          <br>
-          <span>Title: </span>
-          <span>{{auction.title}}</span><br>
-          <span>Price: </span>
-          <span>{{auction.minimumPrice}}</span><br>
-          <span>End in:</span>
-          <span>{{auction.endDate}}</span>
-      </a>
+        <img class="img-fluid img-thumbnail" src="/assets/images/{{auction.photos}}" style="height: 150px;" alt="">
+        <br>
+        <span>Title: {{auction.title}}</span><br></a>
+      <span>Bidding price: {{auction.minimumPrice}} USD</span><br>
+      <span>Buy it now: {{auction.buyNow}} USD</span><br>
+      <span>End in: {{auction.endDate | date:'EEEE, MMMM d, h:mm:ss a'}}</span><br>
     </div>
   </div>
 </div>

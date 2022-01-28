@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   env: 'LOCAL',
   //baseAPIUrl: 'https://auction-backend-sys.herokuapp.com/api/v1',
-  baseAPIUrl: 'http://localhost:80/auction-system-api/api/v1',
+  baseAPIUrl: 'https://auction-simon-project.page:82/auction-system-api/api/v1',
   api: {
     user: 'users',
     address: 'addresses',
