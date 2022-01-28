@@ -1,23 +1,32 @@
-<div>
+<div class="auctionDisplay">
   <section class="h-100 d-flex flex-row">
     <div>
       <img src="assets/images/{{auction.photos}}" style="max-width:25%" class="img-thumbnail">
     </div>
   </section>
   <aside class="h-100 d-flex flex-row align-items-right">
-    <div class="d-flex justify-content-right">
+    <div class="auctionDetails d-flex justify-content-right">
       <aside class="col">
-        <h1 class="display-1">
+        <h1 class="title">
           <b>{{auction.title}}</b>
         </h1><br>
-        <span>{{auction.description}}</span><br>
-        <span>Buy now price: {{auction.buyNow}} USD</span><br>
-        <span>Starting Bid: {{auction.minimumPrice}} USD</span><br>
-        <span>End date: {{auction.endDate | date:'EEEE, MMMM d, h:mm:ss a'}}</span><br>
-        <button mat-raised-button type="button" class="btn btn-primary btn-lg" (click)="createBidding()">New Bid</button>
-        <button mat-raised-button type="button" class="btn btn-primary btn-lg" (click)="createPurchasing()">Buy Now</button>
+        <div class="bidStart">Starting Bid: </div>
+        <div class="auctionField"><span class="minimumPrice"> {{auction.minimumPrice}} USD</span>
+          <input placeholder="Bid amount" required type="text" formControlName="biddingPrice" class="form-control"
+            size="11" maxlength="11" [ngClass]="{ 'is-invalid': submitted && f.biddingPrice.errors }" />
+          <div *ngIf="submitted && f.biddingPrice.errors" class="invalid-feedback">
+            <div *ngIf="f.biddingPrice.errors.required">Bidding Price is required</div>
+          </div><br>
+          <div class="bidAmt">Enter {{auction.minimumPrice + 5}} USD or more</div>
+          <span>Buy now price: {{auction.buyNow}} USD</span><br>
+          <span>End date: {{auction.endDate | date:'EEEE, MMMM d, h:mm:ss a'}}</span><br>
+          <span>Item Description: {{auction.description}}</span><br>
+          <button mat-raised-button type="button" class="btn btn-primary btn-lg" (click)="createBidding()">Bidding
+            Now</button>
+          <button mat-raised-button type="button" class="btn btn-primary btn-lg" (click)="createPurchasing()">Buy
+            Now</button>
+        </div>
       </aside>
     </div>
   </aside>
-
 </div>
