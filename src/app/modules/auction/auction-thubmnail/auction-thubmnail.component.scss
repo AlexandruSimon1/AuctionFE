@@ -1,12 +1,26 @@
-span{
-    color: slateblue
+.span {
+    color: rgb(218, 206, 42);
 }
-div{
-    float: left;
-    margin-left: 15px;
+
+.row {
+    display: flex;
 }
-h1{
+
+.fill {
+    flex: 1;
+}
+.auctionDisplay {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.headerTitle {
     text-align: center;
-    //font-size: 35px;
-    font-weight: bold;
+    justify-content: center;
+    align-self: center;
+}
+
+.container {
+    padding: 10px;
+    min-width: 350px;
 }

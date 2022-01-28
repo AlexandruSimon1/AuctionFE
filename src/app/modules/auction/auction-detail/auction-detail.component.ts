@@ -16,7 +16,7 @@ import { Bidding } from 'src/app/models/bidding';
   styleUrls: ['./auction-detail.component.scss']
 })
 export class AuctionDetailComponent implements OnInit {
-  public auctions: Auction;
+  auction: Auction;
   user: User;
   bidding: Bidding;
   purchasing: Purchasing;
@@ -28,14 +28,15 @@ export class AuctionDetailComponent implements OnInit {
     private purchasingService: PurchasingService) { }
 
   ngOnInit(): void {
-    const currentUser = this.authenticationService.currentUserValue;
-    this.getUser(currentUser.id);
+    if (this.authenticationService.currentUserValue !== null) {
+      this.getUser(this.authenticationService.currentUserValue.id);
+    }
     this.getAuction(this.activatedRoute.snapshot.params.id);
   }
 
   createBidding() {
     const user = this.user;
-    const auction = this.auctions;
+    const auction = this.auction;
     this.bidding = { auction, user };
     this.biddingService.createBidding(this.bidding).subscribe(() => {
       this.bidding = new Bidding();
@@ -45,7 +46,7 @@ export class AuctionDetailComponent implements OnInit {
 
   createPurchasing() {
     const user = this.user;
-    const auction = this.auctions;
+    const auction = this.auction;
     this.purchasing = { auction, user };
     this.purchasingService.createPurchasing(this.purchasing).subscribe(() => {
       this.purchasing = new Purchasing();
@@ -56,8 +57,8 @@ export class AuctionDetailComponent implements OnInit {
   getAuction(id: number) {
     this.auctionService.getAuctionById(id).subscribe(
       auction => {
-        this.auctions = auction;
-        return this.auctions;
+        this.auction = auction;
+        return this.auction;
       }, error => console.log(error)
     );
   }
