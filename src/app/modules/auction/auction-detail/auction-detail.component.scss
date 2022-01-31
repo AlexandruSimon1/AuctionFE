@@ -22,9 +22,12 @@
     line-height: 100%;
 }
 
+.clearBoth{
+    clear: both;
+}
+
 #CentralPanel {
     position: relative;
-    clear: both;
     width: 99.8%;
     line-height: normal;
     float: left;
@@ -151,13 +154,6 @@ img.img500 {
     font-size: 0;
     line-height: 0;
 }
-.u-dspn {
-    display: none;
-}
-
-form {
-    display: block;
-}
 
 .nonActPanel {
     padding: 16px 0 8px 0;
@@ -181,7 +177,6 @@ form {
     font-weight: bold;
     margin: 0;
     padding: 0;
-    display: block;
 }
 
 .vi-ds3cont-box-marpad {
@@ -227,15 +222,11 @@ form {
     line-height: normal;
 }
 
-.vi-compat-hide {
+.displayNone{
     display: none;
-    height: 8px;
-    clear: both;
 }
-
 .spcr {
     height: 8px;
-    clear: both;
 }
 
 .u-flL {
@@ -292,7 +283,6 @@ form {
     font-size: 14px;
     color: #333;
     margin-bottom: 8px;
-    display: block;
     font-weight: normal;
     letter-spacing: normal;
     font-family: Verdana !important;
@@ -305,7 +295,6 @@ form {
 }
 
 #MaxBidId {
-    display: block;
     width: 70%;
     box-shadow: none;
     border: 1px solid #767676;
@@ -337,7 +326,6 @@ form {
     font-size: 14px;
     line-height: 20px;
     padding-top: 8px;
-    display: none;
 }
 
 .sprtr {
@@ -364,7 +352,6 @@ form {
     border: 1px solid #0053a0;
     font-weight: bold;
     border-radius: 20px;
-    display: block;
     width: 100%;
 }
 
@@ -429,11 +416,6 @@ form {
 
 #BottomPanel {
     position: relative;
-    clear: both;
-}
-
-#viTabs {
-    clear: both;
 }
 
 .tab {
@@ -464,20 +446,19 @@ a.item.sel {
 }
 
 .tab_clr {
-    display: block;
     height: 0;
-    clear: both;
     visibility: hidden;
     overflow: hidden;
 }
 .content {
     line-height: normal;
-    display: block;
     padding: 15px;
 }
 .sh-cnt {
     margin-bottom: 15px;
-    clear: both;
     width: 100%;
 }
 
+.displayBlock{
+    display: block;
+}
