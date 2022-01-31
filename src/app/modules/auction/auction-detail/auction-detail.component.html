@@ -1,7 +1,7 @@
 <body id="mainBody">
   <div id="Body" class="sz940 sz1280">
     <div id="CentralPanelDF">
-      <div id="CentralPanel">
+      <div id="CentralPanel" class="clearBoth">
         <div id="CentralPanelInternal">
           <div id="PicturePanel" class="pp-c pic_panel">
             <div class="pp-ic pp-ic500 vi-v-img-pp-ic">
@@ -35,18 +35,18 @@
                 </h1>
               </div>
               <div class="it-rlBr it-rlBr500 vi-title-v-img-srtp"></div>
-              <span id="vi-lkhdr-itmTitl" class="u-dspn">{{auction.title}}</span>
+              <span id="vi-lkhdr-itmTitl" class="displayNone">{{auction.title}}</span>
             </div>
             <div id="mainContent" role="main" tabindex="-1" aria-labelledby="itemInfoLabel" class="is"
               style="overflow:hidden" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
               <h2 id="itemInfoLabel" class="g-hdn">Item information</h2>
-              <form>
+              <form class="displayBlock">
                 <div class="nonActPanel">
                   <div>
                     <div class="u-flL lable">Condition:</div>
-                    <div class="u-flL condText" id="vi-itm-cond">New</div>
+                    <div class="u-flL condText displayBlock" id="vi-itm-cond">New</div>
                   </div>
-                  <div class="u-cb spcr a1"></div>
+                  <div class="u-cb spcr a1 clearBoth"></div>
                   <div class>
                     <div class="u-flL lable">Time left:</div>
                     <div class="u-flL">
@@ -60,24 +60,24 @@
                       </span>
                     </div>
                   </div>
-                  <div class="u-cb spcr"></div>
-                  <div class="u-cb spcr"></div>
+                  <div class="u-cb spcr clearBoth"></div>
+                  <div class="u-cb spcr clearBoth"></div>
                 </div>
                 <div class="c-std watch-redesign vi-ds3cont-box-marpad new-brdr-btns">
                   <div class="actPanel vi-noborder vi-no-heart">
                     <div class="columncontainer">
                       <div class="labelvalue-column">
                         <div class="lbl-value-set">
-                          <div class="vi-compat-hide"></div>
+                          <div class="vi-compat-hide clearBoth displayNone spcr"></div>
                           <div class="lbl vi-currentBidAccColorClass">Starting Bid: </div>
                           <div class="vi-price" itemprop="offers" itemscope="itemscope"
                             itemtype="https://schema.org/Offer"><span id="prcIsum_bidPrice"
                               class="notranslate">{{auction.minimumPrice}}
                               USD</span>
-                            <div class="rswnm">Available for bidding</div>
+                            <div class="rsvnm displayBlock">Available for bidding</div>
                             <div class="timeLeft">
                               <input id="MaxBidId" placeholder="Bid amount" required type="text"
-                                formControlName="biddingPrice" class="form-control" size="11" maxlength="11"
+                                formControlName="biddingPrice" class="form-control displayBlock" size="11" maxlength="11"
                                 [ngClass]="{ 'is-invalid': submitted && f.biddingPrice.errors }" />
                               <div *ngIf="submitted && f.biddingPrice.errors" class="invalid-feedback">
                                 <div *ngIf="f.biddingPrice.errors.required">Bidding Price is required</div>
@@ -85,16 +85,16 @@
                             </div>
                             <div class="bidAmt">Enter {{auction.minimumPrice + (auction.minimumPrice * 0.05) }} USD or
                               more</div>
-                            <div class="vi-eco-fee"></div>
+                            <div class="vi-eco-fee displayNone"></div>
                           </div>
-                          <div class="spcr"></div>
+                          <div class="spcr clearBoth"></div>
                           <div class="sprtr"></div>
                         </div>
                       </div>
                       <div class="vi-bb-small-clpd-btn">
                         <div></div>
                         <div></div>
-                        <div class="vi-flex-cta"><button mat-raised-button type="button" class="bidBtn_btn"
+                        <div class="vi-flex-cta"><button mat-raised-button type="button" class="bidBtn_btn displayBlock" 
                             (click)="createBidding()">Bidding
                             Now</button></div>
                         <div class="g-hdn"></div>
@@ -112,12 +112,12 @@
                                 <div id="vi-mskumap-none"><span class="notranslate" id="prcIsum"
                                     style="text-decoration: none;" itemprop="price">{{auction.buyNow}} USD</span></div>
                               </div>
-                              <div class="vi-eco-fee"></div>
+                              <div class="vi-eco-fee displayNone"></div>
                             </div>
                           </div>
                         </div>
                         <div class="vi-bb-small-clpd-btn">
-                          <div class="vi-flex-cta"><button mat-raised-button type="button" class="bidBtn_btn"
+                          <div class="vi-flex-cta"><button mat-raised-button type="button" class="bidBtn_btn displayBlock"
                               (click)="createPurchasing()">Buy
                               Now</button></div>
                         </div>
@@ -133,18 +133,18 @@
     </div>
     <div id="vi_zoomEnl_plc_hldr"></div>
     <div id="BottomPanelDF">
-      <div id="BottomPanel" style=" ">
-        <div id="viTabs" class="tab_wp" style="min-width: 441px;">
+      <div id="BottomPanel" class="clearBoth" style=" ">
+        <div id="viTabs" class="tab_wp clearBoth" style="min-width: 441px;">
           <div class="tab g">
             <a id="viTabs_0" class="item sel" title="Description" idx="0" href="javascript::">
               <h2>Item Description</h2>
             </a>
-            <div class="tab_clr"></div>
+            <div class="tab_clr clearBoth displayBlock"></div>
           </div>
-          <div id="viTabs_0_cnt" class="content sel">
+          <div id="viTabs_0_cnt" class="content sel displayBlock">
             <div id="vi-desc-maincntr">
               <div id="desc-wrapper-ctr">
-                <div class="u-cb sh-cnt"></div>
+                <div class="u-cb sh-cnt clearBoth"></div>
                 <div id="desc_div"><span>{{auction.description}}</span></div>
               </div>
             </div>
