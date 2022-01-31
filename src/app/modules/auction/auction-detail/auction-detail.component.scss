@@ -8,8 +8,11 @@
     min-height: 1024px;
 }
 
-#Body {
+#Body * {
     font-family: Skin-market-sans;
+}
+
+#Body {
     margin: 0 auto;
     padding: 0 5px 10px 5px;
     min-width: 1215px;
@@ -89,8 +92,6 @@ td.img500 {
 
 #linkMainImg {
     background-color: transparent;
-    padding: 0;
-    border: 0;
     appearance: auto;
     -webkit-writing-mode: horizontal-tb !important;
     text-rendering: auto;
@@ -136,8 +137,6 @@ img.img500 {
     font-weight: bold;
     color: #333;
     line-height: normal;
-    margin: 0;
-    padding: 0;
     display: inline;
     margin-block-start: 0.67em;
     margin-block-end: 0.67em;
@@ -165,7 +164,6 @@ img.img500 {
     font-size: 14px;
     width: 21%;
     padding-right: 13px;
-    font-weight: normal;
     word-wrap: break-word;
     float: left;
 }
@@ -175,8 +173,6 @@ img.img500 {
     color: #333;
     font-size: small;
     font-weight: bold;
-    margin: 0;
-    padding: 0;
 }
 
 .vi-ds3cont-box-marpad {
@@ -188,18 +184,15 @@ img.img500 {
     border-top: 1px solid #e5e5e5;
     margin-bottom: 0;
     margin-right: 5px;
-    padding: 0;
     border: 1px solid #ddd;
     border-radius: 3px;
 }
 .vi-noborder {
-    border: 0;
     padding: 1px 0 0;
     background-color: #fff;
 }
 .columncontainer {
     flex-direction: column;
-    margin: 0;
     padding: 16px 0;
     display: flex;
 }
@@ -283,7 +276,6 @@ img.img500 {
     font-size: 14px;
     color: #333;
     margin-bottom: 8px;
-    font-weight: normal;
     letter-spacing: normal;
     font-family: Verdana !important;
 }
@@ -312,7 +304,6 @@ img.img500 {
 
 .bidAmt {
     font-size: 14px;
-    font-weight: normal;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.43;
@@ -461,4 +452,31 @@ a.item.sel {
 
 .displayBlock{
     display: block;
+}
+
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+img,
+form,
+label,
+table,
+caption,
+tbody,
+tr,
+th,
+td,
+section{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  font-size: 100%;
 }
