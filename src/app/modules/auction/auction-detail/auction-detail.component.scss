@@ -1,8 +1,483 @@
-.auctionDisplay {
-    margin-left: 10px;
-}
-.btn {
-    margin-left: 5px;
+#mainBody {
+    background: #fff !important;
+    color: #333;
+    font-size: 14px;
+    font-family: "Helvetica neue", Helvetica, Arial, Sans-serif;
+    line-height: 1;
+    margin: 0 auto;
+    min-height: 1024px;
 }
 
+#Body {
+    font-family: Skin-market-sans;
+    margin: 0 auto;
+    padding: 0 5px 10px 5px;
+    min-width: 1215px;
+    max-width: 1460px;
+}
+
+#CenterPanelDF {
+    font-family: Arial, Sans-Serif, Verdana;
+    font-size: 13px;
+    line-height: 100%;
+}
+
+#CentralPanel {
+    position: relative;
+    clear: both;
+    width: 99.8%;
+    line-height: normal;
+    float: left;
+}
+
+#CenterPanelInternal {
+    outline: 0;
+}
+
+#PicturePanel {
+    float: left;
+    padding: 0 18px 0 0;
+    vertical-align: top;
+    position: relative;
+}
+
+.vi-v-img-pp-ic {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 500px;
+}
+.lftd {
+    border-radius: unset;
+    min-width: 500px;
+    max-height: 500px;
+    border: 1px solid #ececec;
+    position: relative;
+    background: #fff;
+}
+
+table.img500 {
+    height: 500px;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    display: table;
+    box-sizing: border-box;
+    text-indent: initial;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    text-indent: initial;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    text-indent: initial;
+}
+td.img500 {
+    height: 500px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+#linkMainImg {
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+    appearance: auto;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    margin: 0em;
+}
+.vi-img-gallery-fixed-height-500 {
+    height: 500px;
+    position: relative;
+}
+
+img.img500 {
+    max-width: 498px;
+    max-height: 498px;
+    vertical-align: middle;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#LeftSummaryPanel {
+    position: relative;
+    margin-left: 564px;
+    margin-right: 300px;
+    min-width: 405px;
+    padding-right: 15px;
+}
+
+.it-ttl {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.g-hdn {
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    outline: medium none;
+    font-size: 0;
+    line-height: 0;
+}
+.u-dspn {
+    display: none;
+}
+
+form {
+    display: block;
+}
+
+.nonActPanel {
+    padding: 16px 0 8px 0;
+}
+
+.lable {
+    text-align: right;
+    color: #333;
+    font-size: 14px;
+    width: 21%;
+    padding-right: 13px;
+    font-weight: normal;
+    word-wrap: break-word;
+    float: left;
+}
+.condText {
+    text-align: left;
+    float: left;
+    color: #333;
+    font-size: small;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.vi-ds3cont-box-marpad {
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    box-shadow: none;
+    background: 0;
+    border-top: 1px solid #e5e5e5;
+    margin-bottom: 0;
+    margin-right: 5px;
+    padding: 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+.vi-noborder {
+    border: 0;
+    padding: 1px 0 0;
+    background-color: #fff;
+}
+.columncontainer {
+    flex-direction: column;
+    margin: 0;
+    padding: 16px 0;
+    display: flex;
+}
+
+.labelvalue-column {
+    min-height: auto;
+    margin-bottom: 8px;
+    flex: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+.vi-currentBidAccColorClass {
+    padding-top: 0;
+    flex: 1 1 6%;
+    text-align: left;
+    margin-right: 13px;
+    color: #333;
+    font-size: 14px;
+    line-height: normal;
+}
+
+.vi-compat-hide {
+    display: none;
+    height: 8px;
+    clear: both;
+}
+
+.spcr {
+    height: 8px;
+    clear: both;
+}
+
+.u-flL {
+    text-align: left;
+    float: left;
+}
+#vi-time-wrapperSection {
+    display: inline;
+    padding: 0 4px;
+}
+.gh-ar-hdn {
+    color: #000;
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.vi-tm-left {
+    color: #333;
+    font-family: Verdana !important;
+    font-size: 10px;
+}
+
+.vi-price {
+    font: bold medium Trebuchet, "Trebuchet MS";
+    width: auto;
+    white-space: normal;
+    flex: 1 1 60%;
+    padding-right: 5px;
+}
+
+#prcIsum_bidPrice {
+    font-family: Skin-market-sans !important;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: rgba(17, 24, 32, 0.87) !important;
+    font-weight: 700;
+    font-size: 24px;
+    width: auto;
+    white-space: normal;
+}
+
+.lbl-value-set {
+    display: flex;
+}
+
+.rsvnm {
+    line-height: 20px;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: normal;
+    letter-spacing: normal;
+    font-family: Verdana !important;
+}
+
+.timeLeft {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+}
+
+#MaxBidId {
+    display: block;
+    width: 70%;
+    box-shadow: none;
+    border: 1px solid #767676;
+    -webkit-border-radius: 0;
+    padding: 18px 0 0 13px;
+    font-family: Skin-market-sans !important;
+    font-size: 14px;
+    margin-bottom: 0;
+    height: 22px;
+    color: #333;
+    margin: 0 0 5px;
+    background: #fff;
+    vertical-align: middle;
+}
+
+.bidAmt {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #767676;
+    margin-top: -15px;
+}
+
+.vi-eco-fee {
+    color: #111820;
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 8px;
+    display: none;
+}
+
+.sprtr {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #ccc;
+}
+
+.vi-bb-small-clpd-btn {
+    margin-left: calc(21% + 16px);
+    max-width: 260px;
+    flex: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 140px;
+}
+
+.vi-flex-cta {
+    width: 100%;
+    margin-bottom: 0;
+}
+.bidBtn_btn {
+    background: #0053a0 !important;
+    border: 1px solid #0053a0;
+    font-weight: bold;
+    border-radius: 20px;
+    display: block;
+    width: 100%;
+}
+
+.vi-flex-separator {
+    display: flex;
+    width: 100%;
+    height: 0;
+}
+
+.vi-line-separator {
+    flex: 49%;
+    border-top: 1px solid #e5e5e5;
+}
+
+.lbl {
+    color: #333;
+    font-size: 14px;
+    padding-top: 0;
+    flex: 1 1 6%;
+    text-align: right;
+    margin-right: 13px;
+    line-height: normal;
+}
+
+.val {
+    flex: 1 1 60%;
+    padding-right: 5px;
+}
+
+.mainPrice {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+#vi-mskumap-none {
+    width: auto;
+    padding-right: 0;
+    white-space: normal;
+    display: table;
+    text-align: left;
+    font: bold medium Trebuchet, "Trebuchet MS";
+    float: left;
+}
+
+#prcIsum {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: Skin-market-sans !important;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: rgba(17, 24, 32, 0.87) !important;
+}
+
+#BottomPanelDF {
+    font-family: Arial, Sans-Serif, Verdana;
+    font-size: 13px;
+    line-height: 100%;
+}
+
+#BottomPanel {
+    position: relative;
+    clear: both;
+}
+
+#viTabs {
+    clear: both;
+}
+
+.tab {
+    border-bottom: 1px solid #999;
+    white-space: nowrap;
+    padding: 0 15px;
+}
+
+a.item.sel {
+    color: #333;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid;
+    margin-bottom: -1px;
+    border-color: #999 #999 #fff;
+    background: 0;
+    margin: 0 7px 0 0;
+    padding: 7px 10px;
+    text-decoration: none;
+    float: left;
+}
+
+.tab_wp h2 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.tab_clr {
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+}
+.content {
+    line-height: normal;
+    display: block;
+    padding: 15px;
+}
+.sh-cnt {
+    margin-bottom: 15px;
+    clear: both;
+    width: 100%;
+}
 
