@@ -1,32 +1,156 @@
-<div class="auctionDisplay">
-  <section class="h-100 d-flex flex-row">
-    <div>
-      <img src="assets/images/{{auction.photos}}" style="max-width:25%" class="img-thumbnail">
-    </div>
-  </section>
-  <aside class="h-100 d-flex flex-row align-items-right">
-    <div class="auctionDetails d-flex justify-content-right">
-      <aside class="col">
-        <h1 class="title">
-          <b>{{auction.title}}</b>
-        </h1><br>
-        <div class="bidStart">Starting Bid: </div>
-        <div class="auctionField"><span class="minimumPrice"> {{auction.minimumPrice}} USD</span>
-          <input placeholder="Bid amount" required type="text" formControlName="biddingPrice" class="form-control"
-            size="11" maxlength="11" [ngClass]="{ 'is-invalid': submitted && f.biddingPrice.errors }" />
-          <div *ngIf="submitted && f.biddingPrice.errors" class="invalid-feedback">
-            <div *ngIf="f.biddingPrice.errors.required">Bidding Price is required</div>
-          </div><br>
-          <div class="bidAmt">Enter {{auction.minimumPrice + 5}} USD or more</div>
-          <span>Buy now price: {{auction.buyNow}} USD</span><br>
-          <span>End date: {{auction.endDate | date:'EEEE, MMMM d, h:mm:ss a'}}</span><br>
-          <span>Item Description: {{auction.description}}</span><br>
-          <button mat-raised-button type="button" class="btn btn-primary btn-lg" (click)="createBidding()">Bidding
-            Now</button>
-          <button mat-raised-button type="button" class="btn btn-primary btn-lg" (click)="createPurchasing()">Buy
-            Now</button>
+<body id="mainBody">
+  <div id="Body" class="sz940 sz1280">
+    <div id="CentralPanelDF">
+      <div id="CentralPanel">
+        <div id="CentralPanelInternal">
+          <div id="PicturePanel" class="pp-c pic_panel">
+            <div class="pp-ic pp-ic500 vi-v-img-pp-ic">
+              <div class="l-shad lftd img img500">
+                <table class="img img500">
+                  <tbody>
+                    <tr>
+                      <td class="img img500">
+                        <button aria-disabled="false" id="linkMainImg"
+                          style="display: block; cursor: default; text-decoration:  none;"
+                          aria-label="Item Image. Opens image gallery">
+                          <div id="mainImgHldr" class="vi-img-gallery-fixed-height-500 zoom_no"
+                            style="width:500px; background-image:none">
+                            <img id="icImg" src="assets/images/{{auction.photos}}"
+                              class="img img500 vi-img-gallery-vertical-allign" itemprop="image">
+                          </div>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div id="LeftSummaryPanel" class="lsp-c lsp-cRight lsp-cL500 lsp-de vi-v-img-strp500">
+            <div class="vi-swc-lsp">
+              <div class style>
+                <h1 class="it-ttl" itemprop="name" id="itemTitle">
+                  <span class="g-hdn">Details about item</span>
+                  {{auction.title}}
+                </h1>
+              </div>
+              <div class="it-rlBr it-rlBr500 vi-title-v-img-srtp"></div>
+              <span id="vi-lkhdr-itmTitl" class="u-dspn">{{auction.title}}</span>
+            </div>
+            <div id="mainContent" role="main" tabindex="-1" aria-labelledby="itemInfoLabel" class="is"
+              style="overflow:hidden" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <h2 id="itemInfoLabel" class="g-hdn">Item information</h2>
+              <form>
+                <div class="nonActPanel">
+                  <div>
+                    <div class="u-flL lable">Condition:</div>
+                    <div class="u-flL condText" id="vi-itm-cond">New</div>
+                  </div>
+                  <div class="u-cb spcr a1"></div>
+                  <div class>
+                    <div class="u-flL lable">Time left:</div>
+                    <div class="u-flL">
+                      <span id="bb-tlft">
+                        <div id="vi-time-wrapperSection">
+                          <span class="gh-ar-hdn" aria-hidden="true"></span>
+                          <span id="vi-cdown-timeLeft" class aria-hidden="false"></span>
+                        </div>
+                        <span> | </span>
+                        <span class="vi-tm-left">{{auction.endDate | date:'EEEE, MMMM d, h:mm:ss a'}}</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="u-cb spcr"></div>
+                  <div class="u-cb spcr"></div>
+                </div>
+                <div class="c-std watch-redesign vi-ds3cont-box-marpad new-brdr-btns">
+                  <div class="actPanel vi-noborder vi-no-heart">
+                    <div class="columncontainer">
+                      <div class="labelvalue-column">
+                        <div class="lbl-value-set">
+                          <div class="vi-compat-hide"></div>
+                          <div class="lbl vi-currentBidAccColorClass">Starting Bid: </div>
+                          <div class="vi-price" itemprop="offers" itemscope="itemscope"
+                            itemtype="https://schema.org/Offer"><span id="prcIsum_bidPrice"
+                              class="notranslate">{{auction.minimumPrice}}
+                              USD</span>
+                            <div class="rswnm">Available for bidding</div>
+                            <div class="timeLeft">
+                              <input id="MaxBidId" placeholder="Bid amount" required type="text"
+                                formControlName="biddingPrice" class="form-control" size="11" maxlength="11"
+                                [ngClass]="{ 'is-invalid': submitted && f.biddingPrice.errors }" />
+                              <div *ngIf="submitted && f.biddingPrice.errors" class="invalid-feedback">
+                                <div *ngIf="f.biddingPrice.errors.required">Bidding Price is required</div>
+                              </div><br>
+                            </div>
+                            <div class="bidAmt">Enter {{auction.minimumPrice + (auction.minimumPrice * 0.05) }} USD or
+                              more</div>
+                            <div class="vi-eco-fee"></div>
+                          </div>
+                          <div class="spcr"></div>
+                          <div class="sprtr"></div>
+                        </div>
+                      </div>
+                      <div class="vi-bb-small-clpd-btn">
+                        <div></div>
+                        <div></div>
+                        <div class="vi-flex-cta"><button mat-raised-button type="button" class="bidBtn_btn"
+                            (click)="createBidding()">Bidding
+                            Now</button></div>
+                        <div class="g-hdn"></div>
+                      </div>
+                      <div class="vi-flex-separator">
+                        <div class="vi-line-separator"></div>
+                        <div class="vi-line-separator"></div>
+                      </div>
+                      <div class="columncontainer">
+                        <div class="labelvalue-column">
+                          <div class="lbl-value-set">
+                            <div class="lbl">Price:</div>
+                            <div class="val">
+                              <div class="mainPrice">
+                                <div id="vi-mskumap-none"><span class="notranslate" id="prcIsum"
+                                    style="text-decoration: none;" itemprop="price">{{auction.buyNow}} USD</span></div>
+                              </div>
+                              <div class="vi-eco-fee"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="vi-bb-small-clpd-btn">
+                          <div class="vi-flex-cta"><button mat-raised-button type="button" class="bidBtn_btn"
+                              (click)="createPurchasing()">Buy
+                              Now</button></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-      </aside>
+      </div>
     </div>
-  </aside>
-</div>
+    <div id="vi_zoomEnl_plc_hldr"></div>
+    <div id="BottomPanelDF">
+      <div id="BottomPanel" style=" ">
+        <div id="viTabs" class="tab_wp" style="min-width: 441px;">
+          <div class="tab g">
+            <a id="viTabs_0" class="item sel" title="Description" idx="0" href="javascript::">
+              <h2>Item Description</h2>
+            </a>
+            <div class="tab_clr"></div>
+          </div>
+          <div id="viTabs_0_cnt" class="content sel">
+            <div id="vi-desc-maincntr">
+              <div id="desc-wrapper-ctr">
+                <div class="u-cb sh-cnt"></div>
+                <div id="desc_div"><span>{{auction.description}}</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
