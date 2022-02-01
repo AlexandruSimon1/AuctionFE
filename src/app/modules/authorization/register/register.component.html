@@ -1,35 +1,77 @@
-<mat-toolbar>
-  <span>Registration</span>
-</mat-toolbar>
-<mat-card class="my-card">
-  <mat-card-content>
-    <mat-form-field class="full-width">
-      <mat-label>User Name</mat-label>
-      <input matInput placeholder="User name" id="username" required [(ngModel)]="user.username" name="username">
-    </mat-form-field>
-    <br />
-    <mat-form-field class="full-width">
-      <mat-label>Password</mat-label>
-      <input matInput placeholder="Password" id="password" required [(ngModel)]="user.password" name="password">
-    </mat-form-field>
-    <br />
-    <mat-form-field class="full-width">
-      <mat-label>First Name</mat-label>
-      <input matInput placeholder="First name" id="firstName" required [(ngModel)]="user.firstName" name="firstName">
-    </mat-form-field>
-    <br />
-    <mat-form-field class="full-width">
-      <mat-label>Last Name</mat-label>
-      <input matInput placeholder="Last Name" id="lastName" required [(ngModel)]="user.lastName" name="lastName">
-    </mat-form-field>
-    <br />
-    <mat-form-field class="full-width">
-      <mat-label>Email</mat-label>
-      <input matInput placeholder="Email" id="email" required [(ngModel)]="user.email" name="email">
-    </mat-form-field>
-    <br />
-  </mat-card-content>
-  <mat-card-actions>
-    <button type="submit" mat-raised-button color="primary" (click)="register()">REGISTER</button>
-  </mat-card-actions>
-</mat-card>
+<div class="mainContent" role="main">
+  <div class="PartialReg">
+    <mat-toolbar class="toolbar__title">
+      <h1 class="title">Create an account</h1>
+    </mat-toolbar><br>
+    <div class="wrapperConsolidator">
+      <div class="ppaContainerWrapper">
+        <div class="ppaContainer">
+          <mat-card class="soc-en">
+            <div>
+              <div id="ariaPageId" class="clipped" role="region" aria-live="assertive"></div>
+              <mat-card-content class="create-personal-account-with-email">
+                <mat-form-field class="mat-form-field-fn">
+                  <mat-label>First Name</mat-label>
+                  <span>
+                    <span class="floating-label">
+                      <span class="textbox">
+                        <input matInput placeholder="First name" id="firstName" required [(ngModel)]="user.firstName"
+                          name="firstName">
+                      </span>
+                    </span>
+                  </span>
+                </mat-form-field>
+                <mat-form-field class="mat-form-field-ln">
+                  <mat-label>Last Name</mat-label>
+                  <span>
+                    <span class="floating-label">
+                      <span class="textbox">
+                        <input matInput placeholder="Last Name" id="lastName" required [(ngModel)]="user.lastName"
+                          name="lastName">
+                      </span>
+                    </span>
+                  </span>
+                </mat-form-field>
+                <mat-form-field class="mat-form-field-un">
+                  <mat-label>User Name</mat-label>
+                  <span>
+                    <span class="floating-label">
+                      <span class="textbox">
+                        <input matInput placeholder="User name" id="username" required [(ngModel)]="user.username"
+                          name="username">
+                      </span>
+                    </span>
+                  </span>
+                </mat-form-field>
+                <mat-form-field class="mat-form-field-email">
+                  <mat-label>Email</mat-label>
+                  <span>
+                    <span class="floating-label">
+                      <span class="textbox">
+                        <input matInput placeholder="Email" id="email" required [(ngModel)]="user.email" name="email">
+                      </span>
+                    </span>
+                  </span>
+                </mat-form-field>
+                <mat-form-field class="mat-form-field-password">
+                  <mat-label>Password</mat-label>
+                  <span>
+                    <span class="floating-label">
+                      <span class="textbox">
+                        <input matInput placeholder="Password" id="password" required [(ngModel)]="user.password"
+                          name="password" type="password" style="padding-right: 79px;">
+                      </span>
+                    </span>
+                  </span>
+                </mat-form-field>
+                <mat-card-actions class="mat-card-actions">
+                  <button type="submit" mat-raised-button color="primary" (click)="register()">Create account</button>
+                </mat-card-actions>
+              </mat-card-content>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
