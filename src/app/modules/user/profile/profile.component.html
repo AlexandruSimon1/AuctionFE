@@ -1,34 +1,131 @@
-<br>
-<h1> Welcome, {{user.firstName}} {{user.lastName}}! </h1>
-<table class="table table-bordered">
-  <tr>
-    <h4> Account Information </h4>
-  </tr>
-  <tr>
-    <span> Account Name: {{user.username}}</span>
-  </tr>
-  <tr>
-    <span> First Name: {{user.firstName}}</span>
-  </tr>
-  <tr>
-    <span> Last Name: {{user.lastName}}</span>
-  </tr>
-  <tr>
-    <span> Email Address: {{user.email}}</span>
-  </tr>
-  <tr>
-    <span> Account Creation Date: {{user.creationDate | date:'EEEE h:mm a'}}</span>
-  </tr>
-  <tr> <button class="btn btn-primary btn-lgn" routerLink="/user/edit/{{user.id}}"> Edit User Details </button> </tr>
-  <tr> <button class="btn btn-primary btn-lgn" routerLink="/user/address"> Address Details </button> </tr>
-</table>
-<br>
-<a [routerLink]="['/user/bidding']" class="bidding-route"> Biddings </a>
-<table class="table table-bordered">
-  <div *ngFor="let bidding of biddings">
-    <img class="img-fluid img-thumbnail" src="/assets/images/{{bidding.auction.photos}}" style="height: 150px;"
-      alt=""><br>
-    <span>Auction name: {{bidding.auction.title}}</span><br>
-    <span>End Date: {{bidding.auction.endDate | date:'EEEE h:mm a'}}</span>
+<div class="body">
+  <div id="mainContent" role="main" tabindex="-1">
+    <h1 class="title"> Welcome, {{user.firstName}} {{user.lastName}}! </h1>
+    <div class="top-nav">
+      <div class="top-nav-container">
+        <div class="tabs-container">
+          <div class="top-nav--tab">
+            <div class="tab--content">
+              <span class="top-nav--links">Account</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><br>
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="individual_section">
+          <h1 id="individual_personal_info_label" class="title" role="main">Personal info</h1>
+          <div class="separator"></div>
+          <div>
+            <div>
+              <div class="individual_block">
+                <div class="label">
+                  <span>Username</span>
+                </div>
+                <div class="contentbox">
+                  <div class="individual_details">
+                    <div>
+                      <div>
+                        <div id="display_username">{{user.username}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+              <div class="individual_block">
+                <div class="label">
+                  <span>Account type</span>
+                </div>
+                <div class="contentbox">
+                  <div class="individual_details">
+                    <div>
+                      <div>
+                        <div id="display_account_type">{{user.type}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+              <div class="individual_block">
+                <div class="label">
+                  <span>Contact details</span>
+                </div>
+                <div class="contentbox">
+                  <div class="individual_details">
+                    <div>
+                      <div>
+                        <div id="contact_info_label" class="contactInfoDisplay_label"> Email address</div>
+                        <div id="display_email">{{user.email}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+
+            </div>
+            <div class="separator"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table class="table table-bordered">
+      <tr>
+        <span> Creation Date: {{user.creationDate | date:'EEEE, MMMM d, y'}}</span>
+      </tr>
+      <tr> <button class="btn btn-primary btn-lgn" routerLink="/user/edit/{{user.id}}"> Edit User Details </button>
+      </tr>
+      <tr> <button class="btn btn-primary btn-lgn" routerLink="/user/address"> Address Details </button> </tr>
+    </table>
+    <br>
+
+    <div id="mainBody" class="container col-lg-3 col-md-4 col-6">
+      <div class="hl-leaderboard-ad"></div>
+      <div class="hl-module" id="items_list">
+        <div class="hl-card-header">
+          <div class="hl-card-header__header-container">
+            <div class="hl-card-header__title">
+              <h2 class="hl-card-header__headline">
+                <a [routerLink]="['/user/bidding']" class="font-weight-light text-lg-center"> Biddings </a>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <hr class="mt-2 mb-5 text-lg-center">
+        <div class="hl-standard-carousel__container">
+          <div>
+            <div class="carousel" role="group" aria-roledescription="carousel">
+              <div class="carousel__container">
+                <span class="clipped" aria-live="polite">
+                  <span>Carousel showing slide 1 of 4</span>
+                </span>
+                <div class="carousel__viewport text-center text-lg-center">
+                  <ul class="carousel__list">
+                    <mat-card-content class="auctionDisplay col-lg-3 col-md-4 col-6" *ngFor="let bidding of biddings">
+                      <li class="hl-carousel__item" style="margin-right: 16px;">
+                        <img class="img-fluid img-thumbnail" src="/assets/images/{{bidding.auction.photos}}"
+                          style="height: 150px;" alt=""><br>
+                        <div><span class="hl-item__displayPrice">{{bidding.auction.title}}</span></div>
+                        <span class="hl-item__displayPrice">End Date: {{bidding.auction.endDate | date:'EEEE, MMMM d,
+                          h:mm:ss a'}}</span>
+                      </li>
+                    </mat-card-content>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</table>
