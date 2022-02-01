@@ -139,9 +139,7 @@ button {
     cursor: pointer;
 }
 .mainContent {
-    background-color: #fff;
     background-color: var(--color-background-default, #fff);
-    color: #111820;
     color: var(--color-text-default, #111820);
     font-family: "Market Sans", "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif;
     font-size: 0.875rem;
