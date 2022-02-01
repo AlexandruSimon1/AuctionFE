@@ -1,39 +1,17 @@
 #mainBody {
-    background: #fff !important;
-    color: #333;
-    font-size: 14px;
     font-family: "Helvetica neue", Helvetica, Arial, Sans-serif;
-    line-height: 1;
-    margin: 0 auto;
-    min-height: 1024px;
-}
-
-#Body * {
-    font-family: Skin-market-sans;
 }
 
 #Body {
-    margin: 0 auto;
-    padding: 0 5px 10px 5px;
-    min-width: 1215px;
-    max-width: 1460px;
+    font-family: Skin-market-sans;
 }
 
 #CenterPanelDF {
     font-family: Arial, Sans-Serif, Verdana;
-    font-size: 13px;
-    line-height: 100%;
-}
-
-.clearBoth{
-    clear: both;
 }
 
 #CentralPanel {
     position: relative;
-    width: 99.8%;
-    line-height: normal;
-    float: left;
 }
 
 #CenterPanelInternal {
@@ -42,21 +20,12 @@
 
 #PicturePanel {
     float: left;
-    padding: 0 18px 0 0;
-    vertical-align: top;
-    position: relative;
 }
 
 .vi-v-img-pp-ic {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 500px;
 }
 .lftd {
-    border-radius: unset;
-    min-width: 500px;
-    max-height: 500px;
     border: 1px solid #ececec;
     position: relative;
     background: #fff;
@@ -72,17 +41,6 @@ table.img500 {
     text-indent: initial;
 }
 
-tbody {
-    display: table-row-group;
-    vertical-align: middle;
-    text-indent: initial;
-}
-
-tr {
-    display: table-row;
-    vertical-align: inherit;
-    text-indent: initial;
-}
 td.img500 {
     height: 500px;
     text-align: center;
@@ -92,6 +50,8 @@ td.img500 {
 
 #linkMainImg {
     background-color: transparent;
+    padding: 0;
+    border: 0;
     appearance: auto;
     -webkit-writing-mode: horizontal-tb !important;
     text-rendering: auto;
@@ -107,10 +67,6 @@ td.img500 {
     box-sizing: border-box;
     margin: 0em;
 }
-.vi-img-gallery-fixed-height-500 {
-    height: 500px;
-    position: relative;
-}
 
 img.img500 {
     max-width: 498px;
@@ -124,24 +80,10 @@ img.img500 {
     margin: auto;
 }
 
-#LeftSummaryPanel {
-    position: relative;
-    margin-left: 564px;
-    margin-right: 300px;
-    min-width: 405px;
-    padding-right: 15px;
-}
-
 .it-ttl {
     font-size: 18px;
     font-weight: bold;
     color: #333;
-    line-height: normal;
-    display: inline;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
 }
 .g-hdn {
     position: absolute;
@@ -153,9 +95,12 @@ img.img500 {
     font-size: 0;
     line-height: 0;
 }
+.u-dspn {
+    display: none;
+}
 
-.nonActPanel {
-    padding: 16px 0 8px 0;
+form {
+    display: block;
 }
 
 .lable {
@@ -164,6 +109,7 @@ img.img500 {
     font-size: 14px;
     width: 21%;
     padding-right: 13px;
+    font-weight: normal;
     word-wrap: break-word;
     float: left;
 }
@@ -173,6 +119,9 @@ img.img500 {
     color: #333;
     font-size: small;
     font-weight: bold;
+    margin: 0;
+    padding: 0;
+    display: block;
 }
 
 .vi-ds3cont-box-marpad {
@@ -184,15 +133,16 @@ img.img500 {
     border-top: 1px solid #e5e5e5;
     margin-bottom: 0;
     margin-right: 5px;
+    padding: 0;
     border: 1px solid #ddd;
     border-radius: 3px;
 }
 .vi-noborder {
-    padding: 1px 0 0;
     background-color: #fff;
 }
 .columncontainer {
     flex-direction: column;
+    margin: 0;
     padding: 16px 0;
     display: flex;
 }
@@ -206,30 +156,27 @@ img.img500 {
 }
 
 .vi-currentBidAccColorClass {
-    padding-top: 0;
-    flex: 1 1 6%;
-    text-align: left;
-    margin-right: 13px;
     color: #333;
     font-size: 14px;
     line-height: normal;
 }
 
-.displayNone{
+.vi-compat-hide {
     display: none;
+    height: 8px;
+    clear: both;
 }
+
 .spcr {
     height: 8px;
+    clear: both;
 }
 
 .u-flL {
     text-align: left;
     float: left;
 }
-#vi-time-wrapperSection {
-    display: inline;
-    padding: 0 4px;
-}
+
 .gh-ar-hdn {
     color: #000;
     position: absolute;
@@ -256,10 +203,6 @@ img.img500 {
 
 #prcIsum_bidPrice {
     font-family: Skin-market-sans !important;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.33;
-    letter-spacing: normal;
     color: rgba(17, 24, 32, 0.87) !important;
     font-weight: 700;
     font-size: 24px;
@@ -275,18 +218,11 @@ img.img500 {
     line-height: 20px;
     font-size: 14px;
     color: #333;
-    margin-bottom: 8px;
-    letter-spacing: normal;
     font-family: Verdana !important;
 }
 
-.timeLeft {
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s;
-}
-
 #MaxBidId {
+    display: block;
     width: 70%;
     box-shadow: none;
     border: 1px solid #767676;
@@ -303,11 +239,6 @@ img.img500 {
 }
 
 .bidAmt {
-    font-size: 14px;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.43;
-    letter-spacing: normal;
     color: #767676;
     margin-top: -15px;
 }
@@ -317,6 +248,7 @@ img.img500 {
     font-size: 14px;
     line-height: 20px;
     padding-top: 8px;
+    display: none;
 }
 
 .sprtr {
@@ -343,6 +275,7 @@ img.img500 {
     border: 1px solid #0053a0;
     font-weight: bold;
     border-radius: 20px;
+    display: block;
     width: 100%;
 }
 
@@ -372,12 +305,6 @@ img.img500 {
     padding-right: 5px;
 }
 
-.mainPrice {
-    font-size: 24px;
-    display: flex;
-    flex-direction: column;
-}
-
 #vi-mskumap-none {
     width: auto;
     padding-right: 0;
@@ -403,10 +330,6 @@ img.img500 {
     font-family: Arial, Sans-Serif, Verdana;
     font-size: 13px;
     line-height: 100%;
-}
-
-#BottomPanel {
-    position: relative;
 }
 
 .tab {
@@ -437,20 +360,24 @@ a.item.sel {
 }
 
 .tab_clr {
+    display: block;
     height: 0;
+    clear: both;
     visibility: hidden;
     overflow: hidden;
 }
 .content {
     line-height: normal;
+    display: block;
     padding: 15px;
 }
 .sh-cnt {
     margin-bottom: 15px;
+    clear: both;
     width: 100%;
 }
 
-.displayBlock{
+div{
     display: block;
 }
 
@@ -468,7 +395,6 @@ img,
 form,
 label,
 table,
-caption,
 tbody,
 tr,
 th,
