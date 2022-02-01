@@ -1,16 +1,45 @@
-<div class="container">
-  <mat-card-title class="headerTitle font-weight-light text-lg-center">{{category.name}}
-  </mat-card-title>
-  <hr class="mt-2 mb-5">
-  <div class="row text-center text-lg-left">
-    <div class=" auctionDisplay col-lg-3 col-md-4 col-6" *ngFor="let auction of auctions">
-      <a [routerLink]="['/category/{{category.id}}/auctions']" class="d-block mb-4 h-100 text-center">
-        <img class="img-fluid img-thumbnail" src="/assets/images/{{auction.photos}}" style="height: 150px;" alt="">
-        <br>
-        <span>Title: {{auction.title}}</span><br></a>
-      <span>Bidding price: {{auction.minimumPrice}} USD</span><br>
-      <span>Buy it now: {{auction.buyNow}} USD</span><br>
-      <span>End in: {{auction.endDate | date:'EEEE, MMMM d, h:mm:ss a'}}</span><br>
+<div id="mainBody" class="container col-lg-3 col-md-4 col-6">
+  <div class="hl-leaderboard-ad"></div>
+  <div class="hl-module" id="items_list">
+    <div class="hl-card-header">
+      <div class="hl-card-header__header-container">
+        <div class="hl-card-header__title">
+          <h2 class="hl-card-header__headline">
+            <mat-card-title class="font-weight-light text-lg-center">{{category.name}}
+            </mat-card-title>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <hr class="mt-2 mb-5 text-lg-center">
+    <div class="hl-standard-carousel__container">
+      <div>
+        <div class="carousel" role="group" aria-roledescription="carousel">
+          <div class="carousel__container">
+            <span class="clipped" aria-live="polite">
+              <span>Carousel showing slide 1 of 4</span>
+            </span>
+            <div class="carousel__viewport text-center text-lg-center">
+              <ul class="carousel__list">
+                <mat-card-content class="auctionDisplay col-lg-3 col-md-4 col-6"
+                  *ngFor="let auction of auctions">
+                  <li class="hl-carousel__item" style="margin-right: 16px;">
+                    <a [routerLink]="['/auction', auction.id]"
+                      class="hl-item__link d-block mb-4 h-100 text-center">
+                      <img class="img-thumbnail" src="/assets/images/{{auction.photos}}"
+                        style="height: 150px; opacity: 1;" alt=""><br>
+                      <div><span class="hl-item__displayPrice">Title: {{auction.title}}</span></div>
+                    </a>
+                    <span class="hl-item__displayPrice">Starting bid: {{auction.minimumPrice}} USD</span>
+                    <span class="hl-item__displayPrice">Buy It Now: {{auction.buyNow}} USD</span>
+                    <span class="hl-item__displayPrice">End in: {{auction.endDate | date:'EEEE, MMMM d, h:mm:ss a'}}</span>
+                  </li>
+                </mat-card-content>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
