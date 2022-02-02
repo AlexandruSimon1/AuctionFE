@@ -13,5 +13,4 @@ RUN apt-get update && apt-get install -y \
     curl \
     && rm -rf /var/lib/apt/lists/*
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-COPY ./certificates/ /usr/share/certificates
 COPY --from=build /app/docs/ /usr/share/nginx/html
