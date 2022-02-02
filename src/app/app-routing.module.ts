@@ -1,3 +1,4 @@
+import { UserEditComponent } from './modules/user/user-edit/user-edit.component';
 import { UpdateAddressComponent } from './modules/address/update-address/update-address.component';
 import { CreateAddressComponent } from './modules/address/create-address/create-address.component';
 import { PurchasingListComponent } from './modules/purchasing/purchasing-list/purchasing-list.component';
@@ -17,7 +18,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'users/:id', component: ProfileComponent },
-  { path: 'user/edit/:id', component: RegisterComponent },
+  { path: 'user/edit/:id', component: UserEditComponent },
   { path: '', component: HomeComponent },
   { path: 'auction/:id', component: AuctionDetailComponent },
   { path: 'category/:id', component: AuctionListComponent, pathMatch: 'full' },
