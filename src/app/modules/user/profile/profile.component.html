@@ -59,10 +59,20 @@
                 </div>
                 <div class="contentbox">
                   <div class="individual_details">
-                    <div>
+                    <div class="flexBox">
                       <div>
-                        <div id="contact_info_label" class="contactInfoDisplay_label"> Email address</div>
+                        <div id="contact_info_label" class="contactInfoDisplay_label">Email address</div>
                         <div id="display_email">{{user.email}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="contentbox">
+                  <div class="individual_details">
+                    <div class="flexBox">
+                      <div>
+                        <div id="contact_info_label" class="contactInfoDisplay_label">Created date</div>
+                        <div id="display_creation_date">{{user.creationDate | date:'EEEE, MMMM d, y'}}</div>
                       </div>
                     </div>
                   </div>
@@ -70,62 +80,38 @@
               </div>
             </div>
             <div class="separator"></div>
-            <div>
-
+            <div class="individual_block">
+              <div class="label">
+                <span>Personal info</span>
+              </div>
+              <div class="contentbox">
+                <div class="individual_details">
+                  <div class="flexBox">
+                    <div>
+                      <div id="contact_info_label" class="contactInfoDisplay_label">Owner address</div>
+                      <div class="contactInfoDisplay__content">
+                        <div id="display_address">{{user.addresses[0].city}}</div>
+                        <div id="display_address">{{user.addresses[0].province}}</div>
+                        <div id="display_address">{{user.addresses[0].address}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="separator"></div>
           </div>
         </div>
       </div>
     </div>
-
-    <table class="table table-bordered">
-      <tr>
-        <span> Creation Date: {{user.creationDate | date:'EEEE, MMMM d, y'}}</span>
-      </tr>
-      <tr> <button class="btn btn-primary btn-lgn" routerLink="/user/edit/{{user.id}}"> Edit User Details </button>
-      </tr>
-      <tr> <button class="btn btn-primary btn-lgn" routerLink="/user/address"> Address Details </button> </tr>
-    </table>
-    <br>
-
-    <div id="mainBody" class="container col-lg-3 col-md-4 col-6">
-      <div class="hl-leaderboard-ad"></div>
-      <div class="hl-module" id="items_list">
-        <div class="hl-card-header">
-          <div class="hl-card-header__header-container">
-            <div class="hl-card-header__title">
-              <h2 class="hl-card-header__headline">
-                <a [routerLink]="['/user/bidding']" class="font-weight-light text-lg-center"> Biddings </a>
-              </h2>
-            </div>
+    <mat-card class="mat-card">
+      <mat-card-content class="mat-card-content">
+        <mat-card-actions class="mat-card-actions">
+          <div><button type="submit" mat-raised-button color="primary" routerLink="/user/edit/{{user.id}}">Edit User
+              Details</button></div>
+          <div><button type="submit" mat-raised-button color="primary" routerLink="/user/address">Address
+              Details</button>
           </div>
-        </div>
-        <hr class="mt-2 mb-5 text-lg-center">
-        <div class="hl-standard-carousel__container">
-          <div>
-            <div class="carousel" role="group" aria-roledescription="carousel">
-              <div class="carousel__container">
-                <span class="clipped" aria-live="polite">
-                  <span>Carousel showing slide 1 of 4</span>
-                </span>
-                <div class="carousel__viewport text-center text-lg-center">
-                  <ul class="carousel__list">
-                    <mat-card-content class="auctionDisplay col-lg-3 col-md-4 col-6" *ngFor="let bidding of biddings">
-                      <li class="hl-carousel__item" style="margin-right: 16px;">
-                        <img class="img-fluid img-thumbnail" src="/assets/images/{{bidding.auction.photos}}"
-                          style="height: 150px;" alt=""><br>
-                        <div><span class="hl-item__displayPrice">{{bidding.auction.title}}</span></div>
-                        <span class="hl-item__displayPrice">End Date: {{bidding.auction.endDate | date:'EEEE, MMMM d,
-                          h:mm:ss a'}}</span>
-                      </li>
-                    </mat-card-content>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
