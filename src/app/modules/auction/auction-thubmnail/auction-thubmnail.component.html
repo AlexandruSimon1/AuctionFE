@@ -24,14 +24,14 @@
                 <mat-card-content class="auctionDisplay col-lg-3 col-md-4 col-6"
                   *ngFor="let recentlyAuction of recentlyAuctions">
                   <li class="hl-carousel__item" style="margin-right: 16px;">
-                    <a [routerLink]="['/auction', recentlyAuction.id]"
+                    <a [routerLink]="['/auction', recentlyAuction?.id]"
                       class="hl-item__link d-block mb-4 h-100 text-center">
-                      <img class="img-thumbnail" src="/assets/images/{{recentlyAuction.photos}}"
+                      <img class="img-thumbnail" src="/assets/images/{{recentlyAuction?.photos}}"
                         style="height: 150px; opacity: 1;" alt=""><br>
-                      <div><span class="hl-item__displayPrice">{{recentlyAuction.title}}</span></div>
+                      <div><span class="hl-item__displayPrice">{{recentlyAuction?.title}}</span></div>
                     </a>
                     <span class="hl-item__displayPrice">Starting bid: {{recentlyAuction.minimumPrice}} USD</span>
-                    <span class="hl-item__displayPrice">Buy It Now: {{recentlyAuction.buyNow}} USD</span>
+                    <span class="hl-item__displayPrice">Buy It Now: {{recentlyAuction?.buyNow}} USD</span>
                   </li>
                 </mat-card-content>
               </ul>
@@ -66,14 +66,14 @@
                 <mat-card-content class="auctionDisplay col-lg-3 col-md-4 col-6"
                   *ngFor="let endingAuction of endingAuctions">
                   <li class="hl-carousel__item" style="margin-right: 16px;">
-                    <a [routerLink]="['/auction', endingAuction.id]"
+                    <a [routerLink]="['/auction', endingAuction?.id]"
                       class="hl-item__link d-block mb-4 h-100 text-center">
-                      <img class="img-thumbnail" src="/assets/images/{{endingAuction.photos}}"
+                      <img class="img-thumbnail" src="/assets/images/{{endingAuction?.photos}}"
                         style="height: 150px; opacity: 1;" alt=""><br>
-                      <div><span class="hl-item__displayPrice">{{endingAuction.title}}</span></div>
+                      <div><span class="hl-item__displayPrice">{{endingAuction?.title}}</span></div>
                     </a>
-                    <span class="hl-item__displayPrice">Starting bid: {{endingAuction.minimumPrice}} USD</span>
-                    <span class="hl-item__displayPrice">Buy It Now: {{endingAuction.buyNow}} USD</span>
+                    <span class="hl-item__displayPrice">Starting bid: {{endingAuction?.minimumPrice}} USD</span>
+                    <span class="hl-item__displayPrice">Buy It Now: {{endingAuction?.buyNow}} USD</span>
                   </li>
                 </mat-card-content>
               </ul>
@@ -108,14 +108,14 @@
                 <mat-card-content class="auctionDisplay col-lg-3 col-md-4 col-6"
                   *ngFor="let recentlyEndedAuction of recentlyEndedAuctions">
                   <li class="hl-carousel__item" style="margin-right: 16px;">
-                    <a [routerLink]="['/auction', recentlyEndedAuction.id]"
+                    <a [routerLink]="['/auction', recentlyEndedAuction?.id]"
                       class="hl-item__link d-block mb-4 h-100 text-center">
-                      <img class="img-thumbnail" src="/assets/images/{{recentlyEndedAuction.photos}}"
+                      <img class="img-thumbnail" src="/assets/images/{{recentlyEndedAuction?.photos}}"
                         style="height: 150px; opacity: 1;" alt=""><br>
-                      <div><span class="hl-item__displayPrice">{{recentlyEndedAuction.title}}</span></div>
+                      <div><span class="hl-item__displayPrice">{{recentlyEndedAuction?.title}}</span></div>
                     </a>
-                    <span class="hl-item__displayPrice">Starting bid: {{recentlyEndedAuction.minimumPrice}} USD</span>
-                    <span class="hl-item__displayPrice">Buy It Now: {{recentlyEndedAuction.buyNow}} USD</span>
+                    <span class="hl-item__displayPrice">Starting bid: {{recentlyEndedAuction?.minimumPrice}} USD</span>
+                    <span class="hl-item__displayPrice">Buy It Now: {{recentlyEndedAuction?.buyNow}} USD</span>
                   </li>
                 </mat-card-content>
               </ul>

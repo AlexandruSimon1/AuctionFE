@@ -1,38 +1,62 @@
-<mat-toolbar>
-  <span>Create New Auction</span>
-</mat-toolbar>
-<mat-card class="my-card">
-  <mat-card-content>
-    <mat-form-field class="full-width">
-      <mat-label>Title</mat-label>
-      <input matInput placeholder="Title" id="title" required [(ngModel)]="auction.title" name="title">
-    </mat-form-field><br>
-    <mat-form-field class="full-width">
-      <mat-label>Description</mat-label>
-      <input matInput placeholder="Description" id="desription" required [(ngModel)]="auction.description"
-        name="description">
-    </mat-form-field><br>
-    <mat-form-field class="full-width">
-      <mat-label>Bidding Price</mat-label>
-      <input matInput placeholder="Minimum Price" id="minimumPrice" required [(ngModel)]="auction.minimumPrice"
-        name="minimumPrice">
-    </mat-form-field><br>
-    <mat-form-field class="full-width">
-      <mat-label>Buy Now Price</mat-label>
-      <input matInput placeholder="Buy Now Price" id="buyNow" required [(ngModel)]="auction.buyNow" name="buyNow">
-    </mat-form-field><br>
-    <mat-form-field class="full-width">
-      <mat-label>Image</mat-label>
-      <input matInput type="file" placeholder="Photos" id="photos" required [(ngModel)]="auction.photos" name="photos" accept="image/*">
-    </mat-form-field><br>
-    <mat-form-field>
-      <mat-label>Categories</mat-label>
-      <mat-select>
-        <mat-option (click)="getCategoryById(category.id)" *ngFor="let category of categories" [value]="category.id">
-          {{category.name}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field><br>
-    <button type="submit" class="btn btn-success" (click)="save()">Submit</button>
-  </mat-card-content>
-</mat-card>
+ <div class="pagewidth">
+  <div class="CentralArea">
+    <div>
+      <div class="edp">
+        <div class="main-area">
+          <div class="cnt">
+            <mat-toolbar class="title">
+              <h1>Create New Auction</h1>
+            </mat-toolbar>
+            <mat-card class="my-card">
+              <mat-card-content class="mat-card-content">
+                <div class="inner-cnt" style="visibility: visible;">
+                  <div class="hgh">
+                    <div>
+                      <mat-form-field class="full-width-title" sec="1">
+                        <mat-label class="label-title">Title</mat-label>
+                        <input matInput placeholder="Title" id="title" required [(ngModel)]="auction.title" name="title"
+                          maxlength="80" type="text" aria-required="true">
+                      </mat-form-field><br>
+                      <mat-form-field class="full-width-title">
+                        <mat-label class="lable-title">Description</mat-label>
+                        <input matInput placeholder="Description" id="description" required
+                          [(ngModel)]="auction.description" name="description">
+                      </mat-form-field><br>
+                      <mat-form-field class="full-width-title">
+                        <mat-label class="label-title">Bidding Price</mat-label>
+                        <input matInput placeholder="Minimum Price" id="minimumPrice" required
+                          [(ngModel)]="auction.minimumPrice" name="minimumPrice">
+                      </mat-form-field><br>
+                      <mat-form-field class="full-width-title">
+                        <mat-label class="label-title">Buy Now Price</mat-label>
+                        <input matInput placeholder="Buy Now Price" id="buyNow" required [(ngModel)]="auction.buyNow"
+                          name="buyNow">
+                      </mat-form-field><br>
+                      <mat-form-field class="full-width-title">
+                        <mat-label class="label-title">Image</mat-label>
+                        <input matInput type="file" placeholder="Photos" id="photos" required
+                          [(ngModel)]="auction.photos" name="photos" accept="image/*" (change)="onFileSelected($event)">
+                      </mat-form-field><br>
+                      <mat-form-field class="full-width-title">
+                        <mat-label class="label-title">Categories</mat-label>
+                        <mat-select>
+                          <mat-option (click)="getCategoryById(category.id)" *ngFor="let category of categories"
+                            [value]="category.id">
+                            {{category.name}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+                <mat-card-actions class="act-bar">
+                  <button type="submit" class="btn btn-success" (click)="save()" [disabled]="auction.photos==''">Submit</button>
+                </mat-card-actions>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

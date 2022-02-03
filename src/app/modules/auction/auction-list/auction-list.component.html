@@ -5,7 +5,7 @@
       <div class="hl-card-header__header-container">
         <div class="hl-card-header__title">
           <h2 class="hl-card-header__headline">
-            <mat-card-title class="font-weight-light text-lg-center">{{category.name}}
+            <mat-card-title class="font-weight-light text-lg-center">{{category?.name}}
             </mat-card-title>
           </h2>
         </div>
@@ -24,15 +24,15 @@
                 <mat-card-content class="auctionDisplay col-lg-3 col-md-4 col-6"
                   *ngFor="let auction of auctions">
                   <li class="hl-carousel__item" style="margin-right: 16px;">
-                    <a [routerLink]="['/auction', auction.id]"
+                    <a [routerLink]="['/auction', auction?.id]"
                       class="hl-item__link d-block mb-4 h-100 text-center">
-                      <img class="img-thumbnail" src="/assets/images/{{auction.photos}}"
+                      <img class="img-thumbnail" src="/assets/images/{{auction?.photos}}"
                         style="height: 150px; opacity: 1;" alt=""><br>
-                      <div><span class="hl-item__displayPrice">Title: {{auction.title}}</span></div>
+                      <div><span class="hl-item__displayPrice">Title: {{auction?.title}}</span></div>
                     </a>
-                    <span class="hl-item__displayPrice">Starting bid: {{auction.minimumPrice}} USD</span>
-                    <span class="hl-item__displayPrice">Buy It Now: {{auction.buyNow}} USD</span>
-                    <span class="hl-item__displayPrice">End in: {{auction.endDate | date:'EEEE, MMMM d, h:mm:ss a'}}</span>
+                    <span class="hl-item__displayPrice">Starting bid: {{auction?.minimumPrice}} USD</span>
+                    <span class="hl-item__displayPrice">Buy It Now: {{auction?.buyNow}} USD</span>
+                    <span class="hl-item__displayPrice">End in: {{auction?.endDate | date:'EEEE, MMMM d, h:mm:ss a'}}</span>
                   </li>
                 </mat-card-content>
               </ul>
