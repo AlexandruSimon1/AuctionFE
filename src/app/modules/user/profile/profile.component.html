@@ -1,6 +1,6 @@
 <div class="body">
   <div id="mainContent" role="main" tabindex="-1">
-    <h1 class="title"> Welcome, {{user.firstName}} {{user.lastName}}! </h1>
+    <h1 class="title"> Welcome, {{user?.firstName}} {{user?.lastName}}! </h1>
     <div class="top-nav">
       <div class="top-nav-container">
         <div class="tabs-container">
@@ -27,7 +27,7 @@
                   <div class="individual_details">
                     <div>
                       <div>
-                        <div id="display_username">{{user.username}}</div>
+                        <div id="display_username">{{user?.username}}</div>
                       </div>
                     </div>
                   </div>
@@ -44,7 +44,7 @@
                   <div class="individual_details">
                     <div>
                       <div>
-                        <div id="display_account_type">{{user.type}}</div>
+                        <div id="display_account_type">{{user?.type}}</div>
                       </div>
                     </div>
                   </div>
@@ -62,7 +62,7 @@
                     <div class="flexBox">
                       <div>
                         <div id="contact_info_label" class="contactInfoDisplay_label">Email address</div>
-                        <div id="display_email">{{user.email}}</div>
+                        <div id="display_email">{{user?.email}}</div>
                       </div>
                     </div>
                   </div>
@@ -72,7 +72,7 @@
                     <div class="flexBox">
                       <div>
                         <div id="contact_info_label" class="contactInfoDisplay_label">Created date</div>
-                        <div id="display_creation_date">{{user.creationDate | date:'EEEE, MMMM d, y'}}</div>
+                        <div id="display_creation_date">{{user?.creationDate | date:'EEEE, MMMM d, y'}}</div>
                       </div>
                     </div>
                   </div>
@@ -90,9 +90,9 @@
                     <div>
                       <div id="contact_info_label" class="contactInfoDisplay_label">Owner address</div>
                       <div class="contactInfoDisplay__content">
-                        <div id="display_address">{{user.addresses[0].city}}</div>
-                        <div id="display_address">{{user.addresses[0].province}}</div>
-                        <div id="display_address">{{user.addresses[0].address}}</div>
+                        <div id="display_address">{{user?.addresses[0]?.city}}</div>
+                        <div id="display_address">{{user?.addresses[0]?.province}}</div>
+                        <div id="display_address">{{user?.addresses[0]?.address}}</div>
                       </div>
                     </div>
                   </div>
@@ -107,7 +107,7 @@
     <mat-card class="mat-card">
       <mat-card-content class="mat-card-content">
         <mat-card-actions class="mat-card-actions">
-          <div><button type="submit" mat-raised-button color="primary" routerLink="/user/edit/{{user.id}}">Edit User
+          <div><button type="submit" mat-raised-button color="primary" routerLink="/user/edit/{{user?.id}}">Edit User
               Details</button></div>
           <div><button type="submit" mat-raised-button color="primary" routerLink="/user/address">Address
               Details</button>

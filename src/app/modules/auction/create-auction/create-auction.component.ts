@@ -4,6 +4,7 @@ import { CategoryService } from './../../../services/category.service';
 import { AuctionService } from '../../../services/auction.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-create-auction',
@@ -16,9 +17,11 @@ export class CreateAuctionComponent implements OnInit {
   categories: any;
   category: Category;
   createAuction: Auction;
+  selectedFile : File = null;
   constructor(private auctionService: AuctionService,
     private router: Router,
-    private categoryService: CategoryService) {
+    private categoryService: CategoryService,
+    private http: HttpClient) {
   }
 
   ngOnInit(): void {
@@ -39,9 +42,21 @@ export class CreateAuctionComponent implements OnInit {
     );
     return this.category;
   }
+  onFileSelected(event){
+    this.selectedFile = <File> event.target.files[0];
+  }
 
   save() {
+    const fd = new FormData();
+    var parts = this.auction.photos.split('\\');
+    fd.append('image', this.selectedFile, this.selectedFile.name);
+    this.auction.photos = parts[parts.length - 1];
     this.auction.category = this.category;
+
+    // this.http.post('http://localhost:4200/assets/images', fd)
+    //   .subscribe(res => {
+    //     console.log(res);
+    //   });
     this.auctionService.createAuction(this.auction).
       subscribe(data => {
         console.log(data);

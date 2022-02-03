@@ -24,7 +24,7 @@
                           aria-label="Item Image. Opens image gallery">
                           <div id="mainImgHldr" class="vi-img-gallery-fixed-height-500 zoom_no"
                             style="width:500px; background-image:none; height: 500px; position: relative;">
-                            <img id="icImg" src="assets/images/{{auction.photos}}"
+                            <img id="icImg" src="assets/images/{{auction?.photos}}"
                               class="img img500 vi-img-gallery-vertical-allign" itemprop="image" style="max-width: 498px; max-height: 498px; vertical-align: middle; position: absolute;
                               top: 0; bottom: 0; left: 0; right: 0; margin: auto;">
                           </div>
@@ -47,7 +47,7 @@
                 </h1>
               </div>
               <div class="it-rlBr it-rlBr500 vi-title-v-img-srtp"></div>
-              <span id="vi-lkhdr-itmTitl" class="u-dspn">{{auction.title}}</span>
+              <span id="vi-lkhdr-itmTitl" class="u-dspn">{{auction?.title}}</span>
             </div>
             <div id="mainContent" role="main" tabindex="-1" aria-labelledby="itemInfoLabel" class="is"
               style="overflow:hidden" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
@@ -65,7 +65,7 @@
                     <div class="u-flL lable">Time left:</div>
                     <div class="u-flL">
                       <span id="bb-tlft">
-                        <span class="vi-tm-left">{{auction.endDate | date:'EEEE, MMMM d, h:mm:ss a'}}</span>
+                        <span class="vi-tm-left">{{auction?.endDate | date:'EEEE, MMMM d, h:mm:ss a'}}</span>
                       </span>
                     </div>
                   </div>
@@ -86,7 +86,7 @@
                           <div class="vi-price" itemprop="offers" itemscope="itemscope"
                             itemtype="https://schema.org/Offer">
                             <span id="prcIsum_bidPrice" class="notranslate"
-                              style="font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: normal;">{{auction.minimumPrice}}
+                              style="font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: normal;">{{auction?.minimumPrice}}
                               USD</span>
                             <div class="rsvnm"
                               style="margin-bottom: 8px; display: block;font-weight: normal;letter-spacing: normal;">
@@ -101,7 +101,7 @@
                             </div>
                             <div class="bidAmt"
                               style="font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.43; letter-spacing: normal;">
-                              Enter {{auction.minimumPrice + (auction.minimumPrice * 0.05) }} USD or
+                              Enter {{auction?.minimumPrice + (auction?.minimumPrice * 0.05) }} USD or
                               more</div>
                             <div class="vi-eco-fee"></div>
                           </div>
@@ -128,7 +128,7 @@
                             <div class="val">
                               <div class="mainPrice" style="font-size: 24px; display: flex; flex-direction: column;">
                                 <div id="vi-mskumap-none"><span class="notranslate" id="prcIsum"
-                                    style="text-decoration: none;" itemprop="price">{{auction.buyNow}} USD</span></div>
+                                    style="text-decoration: none;" itemprop="price">{{auction?.buyNow}} USD</span></div>
                               </div>
                               <div class="vi-eco-fee"></div>
                             </div>

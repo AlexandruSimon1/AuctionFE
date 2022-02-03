@@ -1,9 +1,151 @@
-.menuCategory{
-    white-space: pre-wrap;
-  font-size: 20px;
+div {
+  display: block;
+}
+* {
+  font: 300 14px/18px helvetica, neue, helvetica, arial, sans-serif;
+}
+.pagewidth {
+  width: 100%;
+  min-width: 760px;
+}
+.edp {
+  width: auto !important;
+  min-height: 88vh;
+  position: relative;
+  overflow: visible;
+  top: auto;
+  left: auto;
+  height: auto;
+  right: 0;
+  z-index: 1;
 }
 
-.menuButton{
-    white-space: pre-wrap;
-  font-size: 15px;
+.main-area {
+  margin: 0 30px;
+}
+.cnt {
+  margin-left: 0;
+  background: transparent;
+  height: 100% !important;
+  border: none;
+  overflow: hidden;
+}
+
+.title {
+  padding: 0 0 15px;
+  background: #f5f5f5;
+  display: flex;
+  color: #333;
+  margin: 0;
+}
+
+h1 {
+  font-size: 22px;
+  margin: 5px;
+  line-height: 24px;
+}
+
+.my-card {
+  position: relative;
+}
+
+.mat-card-content {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+.inner-cnt {
+  padding: 5px 0 0;
+  margin: 0;
+  position: relative;
+  background: #f5f5f5;
+}
+
+.hgh {
+  position: relative;
+  padding: 20px 25px 0 25px;
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+.full-width-title {
+  max-width: 900px;
+  position: relative;
+  margin-bottom: 5px;
+  vertical-align: middle;
+}
+
+.label-title {
+  padding-top: 8px !important;
+}
+
+#title {
+  width: 98%;
+  margin: 5px 0 0 !important;
+  display: inline-block;
+  max-width: 700px;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  padding: 7px 5px 7px 8px;
+}
+
+#description {
+  width: 98%;
+  margin: 5px 0 0 !important;
+  display: inline-block;
+  max-width: 700px;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  padding: 7px 5px 7px 8px;
+}
+#minimumPrice {
+  width: 98%;
+  margin: 5px 0 0 !important;
+  display: inline-block;
+  max-width: 700px;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  padding: 7px 5px 7px 8px;
+}
+
+#buyNow {
+  width: 98%;
+  margin: 5px 0 0 !important;
+  display: inline-block;
+  max-width: 700px;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  padding: 7px 5px 7px 8px;
+}
+
+#photos {
+  width: 98%;
+  margin: 5px 0 0 !important;
+  display: inline-block;
+  max-width: 700px;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  padding: 7px 5px 7px 8px;
+}
+
+.act-bar {
+  background: #f5f5f5;
+  margin: 20px 0 0 0;
+  position: relative;
+}
+
+.btn {
+  margin-left: 0;
+  margin-right: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  vertical-align: middle;
+  border-radius: 3px;
+  text-decoration: none;
+  display: inline-block !important;
+  padding: 0.85rem 3.5rem !important;
+  border: 0;
+  color: #fff;
+  background-color: #0654ba;
+  cursor: pointer;
 }
