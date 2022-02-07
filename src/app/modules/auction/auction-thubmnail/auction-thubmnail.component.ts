@@ -11,7 +11,6 @@ export class AuctionThumbailComponent implements OnInit {
   public recentlyAuctions;
   public endingAuctions;
   public recentlyEndedAuctions;
-
   constructor(private auctionService: AuctionService) { }
 
   ngOnInit(): void {

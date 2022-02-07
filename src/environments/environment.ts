@@ -15,6 +15,7 @@ export const environment = {
     category: 'categories',
     purchasing: 'purchases',
     authorization: 'auth',
+    s3: 's3',
   }
 };
 

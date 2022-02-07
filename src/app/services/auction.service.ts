@@ -24,8 +24,8 @@ export class AuctionService {
     return this.http.delete<Object>(`${this.baseUrl}/${id}`);
   }
 
-  createAuction(auction: Auction): Observable<Object> {
-    return this.http.post<Object>(`${this.baseUrl}`, auction);
+  createAuction(auction: Auction): Observable<Auction> {
+    return this.http.post<Auction>(`${this.baseUrl}`, auction);
   }
 
   updateAuctionById(id: number, value: any): Observable<Object> {
