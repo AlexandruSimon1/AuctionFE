@@ -1,4 +1,4 @@
- <div class="pagewidth">
+<div class="pagewidth">
   <div class="CentralArea">
     <div>
       <div class="edp">
@@ -11,8 +11,8 @@
               <mat-card-content class="mat-card-content">
                 <div class="inner-cnt" style="visibility: visible;">
                   <div class="hgh">
-                    <div>
-                      <mat-form-field class="full-width-title" sec="1">
+                    <div class="form-field">
+                      <mat-form-field class="full-width-title">
                         <mat-label class="label-title">Title</mat-label>
                         <input matInput placeholder="Title" id="title" required [(ngModel)]="auction.title" name="title"
                           maxlength="80" type="text" aria-required="true">
@@ -50,7 +50,8 @@
                   </div>
                 </div>
                 <mat-card-actions class="act-bar">
-                  <button type="submit" class="btn btn-success" (click)="save()" [disabled]="auction.photos==''">Submit</button>
+                  <button type="submit" class="btn btn-success" (click)="save()"
+                    [disabled]="auction.photos==''">Submit</button>
                 </mat-card-actions>
               </mat-card-content>
             </mat-card>
