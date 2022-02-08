@@ -23,6 +23,7 @@
     "@angular/router": "~13.1.1",
     "@w11k/ngx-componentdestroyed": "^5.0.2",
     "g": "^2.0.1",
+    "node-cron": "^3.0.0",
     "require-resolve": "0.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",

@@ -11,14 +11,21 @@ export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
     private baseUrl = `${environment.baseAPIUrl}/${environment.api.authorization}`;
+    private cron = require('node-cron')
     constructor(private http: HttpClient) {
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
         this.currentUser = this.currentUserSubject.asObservable();
+        this.cron.schedule('* 59 * * *', function () {
+            localStorage.removeItem('currentUser');
+            this.currentUserSubject.next(null);
+        });
     }
 
     public get currentUserValue(): User {
         return this.currentUserSubject.value;
     }
+
+
 
     login(username: string, password: string) {
         return this.http.post<any>(`${this.baseUrl}/signin`, { username, password })
