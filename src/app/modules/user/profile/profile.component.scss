@@ -6,6 +6,9 @@
   width: 100%;
 }
 
+.top-nav {
+  padding: 0 0 10px;
+}
 .top-nav-container {
   display: flex;
   align-items: center;
@@ -20,6 +23,10 @@
   flex: 1.5;
 }
 
+.separator__sub {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .top-nav--tab {
   display: flex;
   padding: 0 1rem;
@@ -97,7 +104,13 @@
   flex: 1;
   padding-left: 16px;
 }
-
+.individual__details-sub {
+  padding-left: 16px;
+}
+.individual__contentbox {
+  flex: 2;
+  min-width: 300px;
+}
 .contactInfoDisplay_label {
   color: #707070;
   margin-bottom: 12px;
@@ -170,6 +183,9 @@ button {
   max-width: 350px;
   min-width: 350px;
   min-height: 4.5rem;
+}
+.mat-card-actions {
+  display: flex;
 }
 .mat-card {
   display: flex;

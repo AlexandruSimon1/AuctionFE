@@ -4,6 +4,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { User } from '../models/user';
+import { state } from '@angular/animations';
+import { Router } from '@angular/router';
 
 
 @Injectable({ providedIn: 'root' })
@@ -13,7 +15,7 @@ export class AuthenticationService {
     private baseUrl = `${environment.baseAPIUrl}/${environment.api.authorization}`;
 
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient,private router: Router) {
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
         this.currentUser = this.currentUserSubject.asObservable();
         var CronJob = require('cron').CronJob;
@@ -21,6 +23,7 @@ export class AuthenticationService {
             console.log("Removing Current User Logged In System")
             localStorage.removeItem('currentUser');
             this.currentUserSubject.next(null);
+            this.router.navigate(['/login']);
         }, null, true, 'Europe/Zurich');
         job.start();
     }

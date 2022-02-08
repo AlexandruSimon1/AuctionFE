@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
       data => {
         this.user = data;
       },
-      error => console.log()
+      error => console.log(error)
     );
   }
   getUserBiddings(id: number) {
@@ -33,7 +33,7 @@ export class ProfileComponent implements OnInit {
       data => {
         this.biddings = data;
       },
-      error => console.log()
+      error => console.log(error)
     );
   }
 
