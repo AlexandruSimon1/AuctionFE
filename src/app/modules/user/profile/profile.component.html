@@ -11,7 +11,7 @@
           </div>
         </div>
       </div>
-    </div><br>
+    </div>
     <div class="content-wrapper">
       <div class="content">
         <div class="individual_section">
@@ -57,8 +57,8 @@
                 <div class="label">
                   <span>Contact details</span>
                 </div>
-                <div class="contentbox">
-                  <div class="individual_details">
+                <div class="individual__contentbox">
+                  <div class="individual__details-sub">
                     <div class="flexBox">
                       <div>
                         <div id="contact_info_label" class="contactInfoDisplay_label">Email address</div>
@@ -66,9 +66,8 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="contentbox">
-                  <div class="individual_details">
+                  <div class="separator__sub separator"></div>
+                  <div class="individual__details-sub">
                     <div class="flexBox">
                       <div>
                         <div id="contact_info_label" class="contactInfoDisplay_label">Created date</div>
@@ -107,11 +106,10 @@
     <mat-card class="mat-card">
       <mat-card-content class="mat-card-content">
         <mat-card-actions class="mat-card-actions">
-          <div><button type="submit" mat-raised-button color="primary" routerLink="/user/edit/{{user?.id}}">Edit User
-              Details</button></div>
-          <div><button type="submit" mat-raised-button color="primary" routerLink="/user/address">Address
-              Details</button>
-          </div>
+          <button type="submit" mat-raised-button color="primary" routerLink="/user/edit/{{user?.id}}">Edit User
+            Details</button>
+          <button type="submit" mat-raised-button color="primary" routerLink="/user/address">Address
+            Details</button>
         </mat-card-actions>
       </mat-card-content>
     </mat-card>
