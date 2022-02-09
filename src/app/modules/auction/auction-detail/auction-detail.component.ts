@@ -33,7 +33,7 @@ export class AuctionDetailComponent implements OnInit {
     private formBuilder: FormBuilder) { 
       this.biddingForm = new FormGroup({
         biddingPrice: new FormControl(),
-      });
+      });      
     }
 
   ngOnInit(): void {
