@@ -9,7 +9,7 @@ import { User } from 'src/app/models/user';
 import { Auction } from 'src/app/models/auction';
 import { AuthenticationService } from 'src/app/security/authentication.service';
 import { Bidding } from 'src/app/models/bidding';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-auction-detail',
@@ -30,7 +30,11 @@ export class AuctionDetailComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private biddingService: BiddingService,
     private purchasingService: PurchasingService,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder) { 
+      this.biddingForm = new FormGroup({
+        biddingPrice: new FormControl(),
+      });
+    }
 
   ngOnInit(): void {
     this.biddingForm = this.formBuilder.group({
@@ -41,7 +45,7 @@ export class AuctionDetailComponent implements OnInit {
     }
     this.getAuction(this.activatedRoute.snapshot.params.id);
   }
-  get f() { return this.biddingForm.controls; }
+ get f() { return this.biddingForm.controls; }
 
   onSubmit() {
     this.submitted = true;
@@ -49,12 +53,12 @@ export class AuctionDetailComponent implements OnInit {
     if (this.biddingForm.invalid) {
       return;
     }
-
-    this.auction.minimumPrice = this.f.biddingPrice.value;
   }
 
   createBidding() {
+    const price =this.biddingForm.get('biddingPrice');
     const user = this.user;
+    this.auction.minimumPrice = price.value;
     const auction = this.auction;
     this.bidding = { auction, user };
     this.biddingService.createBidding(this.bidding).subscribe(() => {
