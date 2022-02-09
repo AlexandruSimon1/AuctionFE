@@ -49,6 +49,9 @@ h1 {
 
 .my-card {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mat-card-content {
@@ -68,9 +71,10 @@ h1 {
   padding: 20px 25px 0 25px;
   margin-bottom: 20px;
   background: #fff;
+  flex: 2;
 }
 
-.form-field{
+.form-field {
   display: inline-block;
 }
 .full-width-title {
@@ -135,12 +139,15 @@ h1 {
 }
 
 .act-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #f5f5f5;
   margin: 20px 0 0 0;
 }
 
 .btn {
-  margin-left: 0;
+  margin-left: 20px;
   margin-right: 20px;
   font-size: 16px;
   font-weight: 300;
