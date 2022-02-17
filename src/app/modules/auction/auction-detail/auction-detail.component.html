@@ -96,7 +96,7 @@
                               <div class="timeLeft">
                                 <input #biddintPrice id="MaxBidId" placeholder="Bid amount" required type="number"
                                   formControlName="biddingPrice" class="form-control" size="11" maxlength="11"
-                                  [ngClass]="{ 'is-invalid': submitted && f.biddingPrice.errors }" />
+                                  [ngClass]="{ 'is-invalid': submitted && f.biddingPrice.errors }" autocomplete="off" />
                                 <div *ngIf="submitted && f.biddingPrice.errors" class="invalid-feedback">
                                   <div *ngIf="f.biddingPrice.errors.required">Bidding Price is required</div>
                                 </div><br>
@@ -117,7 +117,8 @@
                         <div></div>
                         <div class="vi-flex-cta"><button mat-raised-button type="button" class="bidBtn_btn"
                             (click)="createBidding()">Bidding
-                            Now</button></div>
+                            Now</button>
+                        </div>
                         <div class="g-hdn"></div>
                       </div>
                       <div class="vi-flex-separator">

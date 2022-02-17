@@ -16,7 +16,7 @@
                     <span class="floating-label">
                       <span class="textbox">
                         <input matInput placeholder="First name" id="firstName" required [(ngModel)]="user.firstName"
-                          name="firstName">
+                          name="firstName" autocomplete="off">
                       </span>
                     </span>
                   </span>
@@ -27,7 +27,7 @@
                     <span class="floating-label">
                       <span class="textbox">
                         <input matInput placeholder="Last Name" id="lastName" required [(ngModel)]="user.lastName"
-                          name="lastName">
+                          name="lastName" autocomplete="off">
                       </span>
                     </span>
                   </span>
@@ -38,7 +38,7 @@
                     <span class="floating-label">
                       <span class="textbox">
                         <input matInput placeholder="User name" id="username" required [(ngModel)]="user.username"
-                          name="username">
+                          name="username" autocomplete="off">
                       </span>
                     </span>
                   </span>
@@ -48,7 +48,8 @@
                   <span>
                     <span class="floating-label">
                       <span class="textbox">
-                        <input matInput placeholder="Email" id="email" required [(ngModel)]="user.email" name="email">
+                        <input matInput placeholder="Email" id="email" required [(ngModel)]="user.email" name="email"
+                          autocomplete="off">
                       </span>
                     </span>
                   </span>
@@ -59,7 +60,7 @@
                     <span class="floating-label">
                       <span class="textbox">
                         <input matInput placeholder="Password" id="password" required [(ngModel)]="user.password"
-                          name="password" type="password" style="padding-right: 79px;">
+                          name="password" type="password" style="padding-right: 79px;" autocomplete="off">
                       </span>
                     </span>
                   </span>

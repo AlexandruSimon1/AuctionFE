@@ -1,3 +1,4 @@
+import { BiddingPromptComponent } from './../../bidding-prompt/bidding-prompt.component';
 import { Purchasing } from './../../../models/purchasing';
 import { PurchasingService } from './../../../services/purchasing.service';
 import { BiddingService } from './../../../services/bidding.service';
@@ -10,6 +11,7 @@ import { Auction } from 'src/app/models/auction';
 import { AuthenticationService } from 'src/app/security/authentication.service';
 import { Bidding } from 'src/app/models/bidding';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-auction-detail',
@@ -30,11 +32,12 @@ export class AuctionDetailComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private biddingService: BiddingService,
     private purchasingService: PurchasingService,
-    private formBuilder: FormBuilder) { 
-      this.biddingForm = new FormGroup({
-        biddingPrice: new FormControl(),
-      });      
-    }
+    private formBuilder: FormBuilder,
+    private dialog: MatDialog) {
+    this.biddingForm = new FormGroup({
+      biddingPrice: new FormControl(),
+    });
+  }
 
   ngOnInit(): void {
     this.biddingForm = this.formBuilder.group({
@@ -45,7 +48,7 @@ export class AuctionDetailComponent implements OnInit {
     }
     this.getAuction(this.activatedRoute.snapshot.params.id);
   }
- get f() { return this.biddingForm.controls; }
+  get f() { return this.biddingForm.controls; }
 
   onSubmit() {
     this.submitted = true;
@@ -56,15 +59,27 @@ export class AuctionDetailComponent implements OnInit {
   }
 
   createBidding() {
-    const price =this.biddingForm.get('biddingPrice');
-    const user = this.user;
-    this.auction.minimumPrice = price.value;
-    const auction = this.auction;
-    this.bidding = { auction, user };
-    this.biddingService.createBidding(this.bidding).subscribe(() => {
-      this.bidding = new Bidding();
-    },
-      error => console.log(error));
+    const price = this.biddingForm.get('biddingPrice');
+    if (price.value > this.auction.buyNow || price.value == this.auction.buyNow) {
+      const dialogRef = this.dialog.open(BiddingPromptComponent, {
+        data: {
+          title: 'Problem with bid',
+          message: 'Your bid is the same as or more than the Buy It Now price. You can save time and money by buying it now.',
+          action: 'Ok'
+        }
+      });
+
+      dialogRef.afterClosed();
+    } else {
+      const user = this.user;
+      this.auction.minimumPrice = price.value;
+      const auction = this.auction;
+      this.bidding = { auction, user };
+      this.biddingService.createBidding(this.bidding).subscribe(() => {
+        this.bidding = new Bidding();
+      },
+        error => console.log(error));
+    }
   }
 
   createPurchasing() {
@@ -93,5 +108,8 @@ export class AuctionDetailComponent implements OnInit {
         return this.user;
       }, error => console.log(error)
     );
+  }
+  openDialog() {
+    this.dialog.open(AuctionDetailComponent);
   }
 }

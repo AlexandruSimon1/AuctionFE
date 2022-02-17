@@ -15,27 +15,28 @@
                       <mat-form-field class="full-width-title">
                         <mat-label class="label-title">Title</mat-label>
                         <input matInput placeholder="Title" id="title" required [(ngModel)]="auction.title" name="title"
-                          maxlength="80" type="text" aria-required="true">
+                          maxlength="80" type="text" aria-required="true" autocomplete="off">
                       </mat-form-field><br>
                       <mat-form-field class="full-width-title">
                         <mat-label class="lable-title">Description</mat-label>
                         <input matInput placeholder="Description" id="description" required
-                          [(ngModel)]="auction.description" name="description">
+                          [(ngModel)]="auction.description" name="description" autocomplete="off">
                       </mat-form-field><br>
                       <mat-form-field class="full-width-title">
                         <mat-label class="label-title">Bidding Price</mat-label>
                         <input matInput placeholder="Minimum Price" id="minimumPrice" required
-                          [(ngModel)]="auction.minimumPrice" name="minimumPrice">
+                          [(ngModel)]="auction.minimumPrice" name="minimumPrice" autocomplete="off">
                       </mat-form-field><br>
                       <mat-form-field class="full-width-title">
                         <mat-label class="label-title">Buy Now Price</mat-label>
                         <input matInput placeholder="Buy Now Price" id="buyNow" required [(ngModel)]="auction.buyNow"
-                          name="buyNow">
+                          name="buyNow" autocomplete="off">
                       </mat-form-field><br>
                       <mat-form-field class="full-width-title">
                         <mat-label class="label-title">Image</mat-label>
                         <input matInput type="file" placeholder="Photos" id="photos" required
-                          [(ngModel)]="auction.photos" name="photos" accept="image/*" (change)="onFileSelected($event)">
+                          [(ngModel)]="auction.photos" name="photos" accept="image/*" (change)="onFileSelected($event)"
+                          autocomplete="off">
                       </mat-form-field><br>
                       <mat-form-field class="full-width-title">
                         <mat-label class="label-title">Categories</mat-label>
