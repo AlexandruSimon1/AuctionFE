@@ -59,6 +59,7 @@ import { UpdateAddressComponent } from './modules/address/update-address/update-
 import { CreateAuctionComponent } from './modules/auction/create-auction/create-auction.component';
 import { ErrorInterceptor } from './security/error.interceptor';
 import { JwtInterceptor } from './security/jwt.interceptor';
+import { BiddingPromptComponent } from './modules/bidding-prompt/bidding-prompt.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { JwtInterceptor } from './security/jwt.interceptor';
     AddressListComponent,
     CreateAddressComponent,
     UpdateAddressComponent,
-    CreateAuctionComponent
+    CreateAuctionComponent,
+    BiddingPromptComponent
   ],
   imports: [
     CommonModule,
