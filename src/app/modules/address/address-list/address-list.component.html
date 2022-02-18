@@ -1,24 +1,31 @@
-<div class="main">
-    <div class="mainContent" role="main" tabindex="-1">
-        <div class="head">
-            <div class="title">
-                <h1>Delivery address</h1>
+<div>
+    <div class="main">
+        <div class="mainContent" role="main" tabindex="-1">
+            <div class="head">
+                <div class="title">
+                    <h1>Delivery address</h1>
+                </div>
             </div>
-        </div>
-        <div>
-            <div class="container">
-                <div class="row">
-                    <div class="addressList" *ngFor="let address of addresses">
-                        <span>City: {{address.city}}</span><br>
-                        <span>Province: {{address.province}}</span><br>
-                        <span>Address: {{address.address}}</span>
-                        <hr class="mt-2 mb-5">
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="addressList" *ngFor="let address of addresses" style="display: flex;">
+                            <div class="addresswidth">
+                                <span>{{address?.city}}<br></span>
+                                <span>{{address?.province}}<br></span>
+                                <span>{{address?.address}}<br></span>
+                            </div>
+                            <div class="editButton">
+                                <button class="edit" routerLink="/update/address">Update Current
+                                    Address</button>
+                            </div>
+                        </div>
                     </div>
-                    <button class="btn btn-primary btn-lgn" routerLink="/update/address">Update Current
-                        Address</button>
-                    <button class="btn btn-primary btn-lgn" routerLink="/create/address">Add New Address</button>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="bottom">
+        <a class="addAddress" tabindex="0" href="/create/address">Add New Address</a>
     </div>
 </div>
