@@ -25,6 +25,7 @@
     "cron": "^1.8.2",
     "g": "^2.0.1",
     "node-cron": "^3.0.0",
+    "moment-timezone": "0.5.34",
     "require-resolve": "0.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",

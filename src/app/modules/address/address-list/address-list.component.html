@@ -1,12 +1,21 @@
-<div class="container">
-    <hr class="mt-2 mb-5">
-    <div class="row text-center text-lg-left">
-        <div class="col-lg-3 col-md-4 col-6" *ngFor="let address of addresses">
-            <span>City: {{address.city}}</span><br>
-            <span>Province: {{address.province}}</span><br>
-            <span>Address: {{address.address}}</span>
+<div>
+    <div class="head">
+        <div class="title">
+            <h1>Delivery address</h1>
         </div>
-        <button class="btn btn-primary btn-lgn" routerLink="/update/address"> Update Current Address </button> 
-        <button class="btn btn-primary btn-lgn" routerLink="/create/address"> Add New Address </button> 
+    </div>
+    <div class="mainContent" role="main" tabindex="-1">
+        <div class="container">
+            <div class="row">
+                <div class="addressList" *ngFor="let address of addresses">
+                    <span>City: {{address.city}}</span><br>
+                    <span>Province: {{address.province}}</span><br>
+                    <span>Address: {{address.address}}</span>
+                    <hr class="mt-2 mb-5">
+                </div>
+                <button class="btn btn-primary btn-lgn" routerLink="/update/address"> Update Current Address </button>
+                <button class="btn btn-primary btn-lgn" routerLink="/create/address"> Add New Address </button>
+            </div>
+        </div>
     </div>
 </div>

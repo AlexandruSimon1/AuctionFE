@@ -1,0 +1,31 @@
+
+.head {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    width: 95%;
+    float: left;
+}
+
+.mainContent {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0 !important;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin: 16px 8px;
+    padding-bottom: 1px;
+}
+
+.addressList{
+    padding-bottom: 10px;
+    padding-left: 20px;
+    margin: 14px 16px;
+}
+div {
+    display: block;
+}
