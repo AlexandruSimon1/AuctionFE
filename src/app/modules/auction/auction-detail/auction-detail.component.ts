@@ -61,15 +61,13 @@ export class AuctionDetailComponent implements OnInit {
   createBidding() {
     const price = this.biddingForm.get('biddingPrice');
     if (price.value > this.auction.buyNow || price.value == this.auction.buyNow) {
-      const dialogRef = this.dialog.open(BiddingPromptComponent, {
+      this.dialog.open(BiddingPromptComponent, {
         data: {
           title: 'Problem with bid',
           message: 'Your bid is the same as or more than the Buy It Now price. You can save time and money by buying it now.',
           action: 'Ok'
         }
       });
-
-      dialogRef.afterClosed();
     } else {
       const user = this.user;
       this.auction.minimumPrice = price.value;
@@ -108,8 +106,5 @@ export class AuctionDetailComponent implements OnInit {
         return this.user;
       }, error => console.log(error)
     );
-  }
-  openDialog() {
-    this.dialog.open(AuctionDetailComponent);
   }
 }
