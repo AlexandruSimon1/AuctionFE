@@ -1,8 +1,8 @@
-
 .head {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    margin: 12px 8px;
 }
 
 .title {
@@ -10,6 +10,11 @@
     float: left;
 }
 
+.main {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
 .mainContent {
     max-width: 600px;
     margin-left: auto;
@@ -21,10 +26,21 @@
     padding-bottom: 1px;
 }
 
-.addressList{
+.row {
     padding-bottom: 10px;
     padding-left: 20px;
     margin: 14px 16px;
+}
+
+.addressList {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: silver;
+    padding-bottom: 15px;
+    margin-top: 10px;
 }
 div {
     display: block;
