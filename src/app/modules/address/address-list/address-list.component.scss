@@ -26,10 +26,15 @@
     padding-bottom: 1px;
 }
 
+h1 {
+    font-weight: bold;
+}
+
 .row {
     padding-bottom: 10px;
     padding-left: 20px;
     margin: 14px 16px;
+    min-width: 350px;
 }
 
 .addressList {
@@ -41,6 +46,55 @@
     border-color: silver;
     padding-bottom: 15px;
     margin-top: 10px;
+}
+
+.addresswidth {
+    width: 80%;
+    word-break: break-all;
+}
+
+span {
+    font-size: 14px;
+}
+
+.editButton {
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.edit {
+    box-sizing: content-box !important;
+    line-height: 40px;
+    padding: 0 18px !important;
+    background-color: var(--btn-secondary-background-color, var(--color-background-default, #fff));
+    border-color: var(--btn-secondary-border-color, var(--color-b4, #3665f3));
+    color: var(--btn-secondary-foreground-color, var(--color-b4, #3665f3));
+    font-family: inherit;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: bottom;
+    border: 1px solid;
+    border-radius: var(--btn-border-radius, var(--border-radius-button, 48px));
+    display: inline-block;
+    font-size: 0.875rem;
+    min-height: 40px;
+    min-width: 128px;
+    width: 160px;
+}
+
+.bottom {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.addAddress {
+    color: #0654ba;
+    text-decoration: none;
 }
 div {
     display: block;
