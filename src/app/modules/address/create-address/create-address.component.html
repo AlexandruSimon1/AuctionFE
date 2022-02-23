@@ -1,1 +1,62 @@
-<p>create-address works!</p>
+<div class="mainContent" role="main">
+    <div class="PartialReg">
+        <mat-toolbar class="toolbar__title">
+            <h1 class="title">Create address</h1>
+        </mat-toolbar><br>
+        <div class="wrapperConsolidator">
+            <div class="ppaContainerWrapper">
+                <div class="ppaContainer">
+                    <mat-card class="soc-en">
+                        <div>
+                            <div id="ariaPageId" class="clipped" role="region" aria-live="assertive"></div>
+                            <mat-card-content class="create-personal-account-with-email">
+                                <mat-form-field class="mat-form-field-fn">
+                                    <mat-label>City</mat-label>
+                                    <span>
+                                        <span class="floating-label">
+                                            <span class="textbox">
+                                                <input matInput placeholder="City" id="city" [(ngModel)]="address.city"
+                                                    name="city" required="*" autocomplete="off">
+                                            </span>
+                                        </span>
+                                    </span>
+                                </mat-form-field>
+                                <div class="separator__sub separator"></div>
+                                <mat-form-field class="mat-form-field-ln">
+                                    <mat-label>Province</mat-label>
+                                    <span>
+                                        <span class="floating-label">
+                                            <span class="textbox">
+                                                <input matInput placeholder="Province" id="province"
+                                                    [(ngModel)]="address.province" name="province" required="*"
+                                                    autocomplete="off">
+                                            </span>
+                                        </span>
+                                    </span>
+                                </mat-form-field>
+                                <div class="separator__sub separator"></div>
+                                <mat-form-field class="mat-form-field-email">
+                                    <mat-label>Address</mat-label>
+                                    <span>
+                                        <span class="floating-label">
+                                            <span class="textbox">
+                                                <input matInput placeholder="Address" id="address"
+                                                    [(ngModel)]="address.address" name="address" required="*"
+                                                    autocomplete="off">
+                                            </span>
+                                        </span>
+                                    </span>
+                                </mat-form-field>
+                                <mat-card-actions class="mat-card-actions">
+                                    <div><button type="submit" mat-raised-button color="primary"
+                                            (click)="submitAddress()">Create
+                                            address</button></div>
+                                </mat-card-actions>
+                            </mat-card-content>
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

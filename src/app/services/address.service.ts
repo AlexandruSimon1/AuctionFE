@@ -29,6 +29,6 @@ export class AddressService {
   }
 
   updateAddressById(id: number, value: any): Observable<Object> {
-    return this.http.put<Object>(`${this.baseUrl}/${id}`, value);
+    return this.http.patch<Object>(`${this.baseUrl}/${id}`, value);
   }
 }

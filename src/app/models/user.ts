@@ -10,7 +10,7 @@ export class User {
     firstName?: string;
     lastName?: string;
     type?: string;
-    address?: Address[];
+    addresses?: Address[];
     bidding?: Bidding[];
     purchasing?: Purchasing[];
     token?: string;

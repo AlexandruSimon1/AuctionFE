@@ -32,7 +32,7 @@ export class UserService {
   }
 
   updateUserById(id: number, value: any): Observable<Object> {
-    return this.http.put<Object>(`${this.baseUrl}/${id}`, value);
+    return this.http.patch<Object>(`${this.baseUrl}/${id}`, value);
   }
   getBiddingsByUserId(id: number): Observable<Bidding[]> {
     return this.http.get<Bidding[]>(`${this.baseUrl}/${id}/bidding`);
