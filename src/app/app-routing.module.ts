@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: "profile", component: ProfileComponent },
   { path: 'user/address', component: AddressListComponent },
   { path: 'create/address', component: CreateAddressComponent },
-  { path: 'update/address', component: UpdateAddressComponent },
+  { path: 'update/address/:id', component: UpdateAddressComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' }
 ];
 

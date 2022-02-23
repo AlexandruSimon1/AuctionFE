@@ -51,11 +51,10 @@ export class CreateAuctionComponent implements OnInit {
 
     this.auctionService.createAuction(this.auction).
       subscribe(auction => {
-        console.log(auction);
         this.goToList();
         this.s3Service.createImage(auction.id, this.selectedFile)
           .subscribe(res => {
-            console.log(res);
+            return true;
           });
       },
         error => console.log(error));
