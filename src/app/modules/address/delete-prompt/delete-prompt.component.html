@@ -1,0 +1,11 @@
+<div class="bidding-prompt">
+    <div mat-dialog-title>{{title}}</div>
+    <div class="content">
+        <div mat-dialog-actions fxLayout="row" fxLayoutAlign="flex-end">
+            <button mat-button mat-dialog-close>{{message}}</button>
+        </div>
+        <div mat-dialog-actions fxLayout="row" fxLayoutAlign="flex-end">
+            <button mat-button mat-dialog-actions (click)="action">{{action}}</button>
+        </div>
+    </div>
+</div>
