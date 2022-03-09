@@ -84,6 +84,26 @@ span {
     width: 160px;
 }
 
+.delete {
+    box-sizing: content-box !important;
+    line-height: 40px;
+    padding: 0 18px !important;
+    background-color: var(--btn-delete-background-color, var(--color-background-default, #fff));
+    border-color: var(--btn-delete-foreground-color, var(--color-status-attention, #e0103a));
+    color: var(--btn-delete-foreground-color, var(--color-status-attention, #e0103a));
+    border: 1px solid;
+    font-family: inherit;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: bottom;
+    border-radius: var(--btn-border-radius, var(--border-radius-button, 48px));
+    display: inline-block;
+    font-size: 0.875rem;
+    min-height: 40px;
+    min-width: 128px;
+    width: 160px;
+}
 .bottom {
     max-width: 600px;
     margin-left: auto;

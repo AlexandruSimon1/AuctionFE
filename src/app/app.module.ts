@@ -60,6 +60,7 @@ import { CreateAuctionComponent } from './modules/auction/create-auction/create-
 import { ErrorInterceptor } from './security/error.interceptor';
 import { JwtInterceptor } from './security/jwt.interceptor';
 import { BiddingPromptComponent } from './modules/bidding-prompt/bidding-prompt.component';
+import { DeletePromptComponent } from './modules/address/delete-prompt/delete-prompt.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { BiddingPromptComponent } from './modules/bidding-prompt/bidding-prompt.
     CreateAddressComponent,
     UpdateAddressComponent,
     CreateAuctionComponent,
-    BiddingPromptComponent
+    BiddingPromptComponent,
+    DeletePromptComponent
   ],
   imports: [
     CommonModule,

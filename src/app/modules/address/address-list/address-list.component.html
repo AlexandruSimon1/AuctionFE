@@ -18,6 +18,9 @@
                             <div class="editButton">
                                 <button class="edit" routerLink="/update/address/{{address?.id}}">Update Current
                                     Address</button>
+                                <div style="margin-bottom: 5px;"></div>
+                                <button class="delete" type="button" (click)="deleteAddress(address?.id)">Delete Current
+                                    Address</button>
                             </div>
                         </div>
                     </div>
