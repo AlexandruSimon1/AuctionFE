@@ -17,13 +17,12 @@ pipeline {
                 echo 'Building UI image and pushing it to DockerHub is successful done'
             }
         }
-                stage('Deploy On AWS EC2 Instance') {
-                    steps {
-                        withCredentials([string(credentialsId: 'Auction-EC2-URL',variable: "host"),
-                                        usernamePassword(credentialsId: 'Docker', usernameVariable: 'dockerLogin',
-                                            passwordVariable: 'dockerPassword'),
-                                        sshUserPrivateKey(credentialsId: 'AWS-Keypair', keyFileVariable: 'identity', passphraseVariable: '',
-                                        usernameVariable: 'userName')
+        stage('Deploy On AWS EC2 Instance') {
+            steps { withCredentials([string(credentialsId: 'Auction-Service-EC2-URL',variable: "host"),
+                        usernamePassword(credentialsId: 'Docker', usernameVariable: 'dockerLogin',
+                        passwordVariable: 'dockerPassword'),
+                        sshUserPrivateKey(credentialsId: 'AWS-Keypair', keyFileVariable: 'identity',
+                        passphraseVariable: '', usernameVariable: 'userName')
                 ]) {
                     script {
                         def remote = [:]
@@ -32,31 +31,31 @@ pipeline {
                             remote.name = userName
                             remote.identityFile = identity
                             remote.allowAnyHosts = 'true'
-                            sshCommand remote: remote, command: 'docker container kill http-auction-ui && docker container kill https-auction-ui'
-                            sshCommand remote: remote, command: 'docker rm -v http-auction-ui && docker rm -v https-auction-ui'
-                            sshCommand remote: remote, command: "docker rmi ${dockerLogin}/auction-ui:latest"
+                            //sshCommand remote: remote, command: 'docker container kill https-auction-ui'
+                            //sshCommand remote: remote, command: 'docker rm -v https-auction-ui'
+                            //sshCommand remote: remote, command: "docker rmi ${dockerLogin}/auction-ui:latest"
                             sshCommand remote: remote, command: "docker login | docker pull ${dockerLogin}/auction-ui"
-                            sshCommand remote: remote, command: "docker container run -d -p 80:80 --name http-auction-ui ${dockerLogin}/auction-ui && docker container run -d -p 443:443 --name https-auction-ui ${dockerLogin}/auction-ui"
+                            sshCommand remote: remote, command: "docker container run -d -p 443:443 --name https-auction-ui ${dockerLogin}/auction-ui"
                             sshCommand remote: remote, command: 'exit'
                     }
-                        timeout(time: 90, unit: 'SECONDS') {
+                    timeout(time: 90, unit: 'SECONDS') {
                         waitUntil(initialRecurrencePeriod: 2000) {
                             script {
                                 def result =
-                                sh script: 'curl -k --silent --output /dev/null http://${host}:80',
+                                sh script: 'curl -k --silent --output /dev/null https://${host}:443',
                                 returnStatus: true
                                 return (result == 0)
                             }
                         }
-                        }
+                    }
                         echo 'Angular UI is up'
                 }
-                    }
-                }
+            }
+        }
         stage('Clean Docker Images') {
             steps {
                 echo 'Starting Deleting Created Docker Images'
-                sh script: 'docker rmi -f $(docker images -q)'
+                sh script: 'docker system prune -af --volumes'
             }
         }
     }
