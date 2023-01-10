@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
   env: 'DEV',
-  baseAPIUrl: 'https://auction-simon-project.page:8443/api/auction-system-api/v1',
+  baseAPIUrl: 'https://auction-simon-project.page:8443/api/auction-sys-api/v1',
   api: {
     user: 'users',
     address: 'addresses',
