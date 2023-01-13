@@ -9,6 +9,7 @@
 .top-nav {
   padding: 0 0 10px;
 }
+
 .top-nav-container {
   display: flex;
   align-items: center;
@@ -38,11 +39,13 @@
   position: relative;
   top: 1px;
 }
+
 .tab--content {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
 .top-nav--links {
   cursor: default;
   color: #3665f3;
@@ -62,6 +65,7 @@
 .individual_section {
   position: relative;
 }
+
 .title {
   padding-bottom: 25px;
   margin: 0;
@@ -100,18 +104,22 @@
   flex: 1;
   padding-left: 16px;
 }
+
 .individual__details-sub {
   padding-left: 16px;
 }
+
 .individual__contentbox {
   flex: 2;
   min-width: 300px;
 }
+
 .contactInfoDisplay_label {
   color: #707070;
   margin-bottom: 12px;
   display: inline-block;
 }
+
 #mainContent {
   padding: 0 16px;
   outline: 0;
@@ -119,9 +127,11 @@
   min-width: 700px;
   min-height: 45rem;
 }
+
 .title {
   font-size: 36px;
 }
+
 .span {
   color: rgb(218, 206, 42);
 }
@@ -142,17 +152,16 @@
   line-height: 1.5;
   word-break: break-all;
 }
+
 div {
   display: block;
 }
 
 button {
-  margin-top: 8px;
   background-color: var(--button-primary-disabled-background-color, #3665f3);
   border-color: var(--button-primary-border-color, #3665f3);
   color: var(--button-primary-disabled-foreground-color, #fff);
   opacity: 1;
-  margin-right: 1rem;
   padding: var(--button-large-padding-vertical, 14px) var(--button-padding-horizontal, 16px);
   font-size: 1rem;
   min-height: 48px;
@@ -180,9 +189,11 @@ button {
   min-width: 350px;
   min-height: 4.5rem;
 }
+
 .mat-card-actions {
   display: flex;
 }
+
 .mat-card {
   display: flex;
   align-items: center;

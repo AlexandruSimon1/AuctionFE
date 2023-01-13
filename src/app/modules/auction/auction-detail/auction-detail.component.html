@@ -25,7 +25,7 @@
                           <div id="mainImgHldr" class="vi-img-gallery-fixed-height-500 zoom_no"
                             style="width:500px; background-image:none; height: 500px; position: relative;">
                             <img id="icImg"
-                              src="https://auction-simon-project.page:82/auction-system-api/api/v1/s3/download/{{auction?.id}}"
+                              src="{{s3BucketUrl}}{{auction?.id}}"
                               class="img img500 vi-img-gallery-vertical-allign" itemprop="image" style="max-width: 498px; max-height: 498px; vertical-align: middle; position: absolute;
                               top: 0; bottom: 0; left: 0; right: 0; margin: auto;">
                           </div>
@@ -74,7 +74,7 @@
                   <div class="u-cb spcr "></div>
                 </div>
                 <div class="c-std watch-redesign vi-ds3cont-box-marpad new-brdr-btns"
-                  style="border-left: 0; border-right: 0; border-bottom: 0; box-shadow: none; background: 0; 
+                  style="border-left: 0; border-right: 0; border-bottom: 0; box-shadow: none; background: 0;
                 border-top: 1px solid #e5e5e5; margin-bottom: 0; margin-right: 5px; padding: 0; border: 1px solid #ddd; border-radius: 3px;">
                   <div class="actPanel vi-noborder vi-no-heart" style="border: 0; padding: 1px 0 0;">
                     <div class="columncontainer">
@@ -94,7 +94,7 @@
                               Available for bidding</div>
                             <form [formGroup]="biddingForm">
                               <div class="timeLeft">
-                                <input #biddintPrice id="MaxBidId" placeholder="Bid amount" required type="number"
+                                <input #biddingPrice id="MaxBidId" placeholder="Bid amount" required type="number"
                                   formControlName="biddingPrice" class="form-control" size="11" maxlength="11"
                                   [ngClass]="{ 'is-invalid': submitted && f.biddingPrice.errors }" autocomplete="off" />
                                 <div *ngIf="submitted && f.biddingPrice.errors" class="invalid-feedback">
