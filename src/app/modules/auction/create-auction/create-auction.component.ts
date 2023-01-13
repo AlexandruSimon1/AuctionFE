@@ -1,10 +1,10 @@
-import { S3Service } from './../../../services/s3.service';
-import { Auction } from './../../../models/auction';
-import { Category } from './../../../models/category';
-import { CategoryService } from './../../../services/category.service';
-import { AuctionService } from '../../../services/auction.service';
-import { Component, Injectable, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {S3Service} from './../../../services/s3.service';
+import {Auction} from './../../../models/auction';
+import {Category} from './../../../models/category';
+import {CategoryService} from './../../../services/category.service';
+import {AuctionService} from '../../../services/auction.service';
+import {Component, Injectable, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-create-auction',
@@ -18,10 +18,11 @@ export class CreateAuctionComponent implements OnInit {
   categories: any;
   category: Category;
   selectedFile: File = null;
+
   constructor(private auctionService: AuctionService,
-    private router: Router,
-    private categoryService: CategoryService,
-    private s3Service: S3Service) {
+              private router: Router,
+              private categoryService: CategoryService,
+              private s3Service: S3Service) {
   }
 
   ngOnInit(): void {
@@ -42,6 +43,7 @@ export class CreateAuctionComponent implements OnInit {
     );
     return this.category;
   }
+
   onFileSelected(event) {
     this.selectedFile = <File>event.target.files[0];
   }
@@ -49,15 +51,14 @@ export class CreateAuctionComponent implements OnInit {
   save() {
     this.auction.category = this.category;
 
-    this.auctionService.createAuction(this.auction).
-      subscribe(auction => {
+    this.auctionService.createAuction(this.auction).subscribe(auction => {
         this.goToList();
         this.s3Service.createImage(auction.id, this.selectedFile)
           .subscribe(res => {
             return true;
           });
       },
-        error => console.log(error));
+      error => console.log(error));
   }
 
   onSubmit() {

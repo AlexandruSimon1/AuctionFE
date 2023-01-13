@@ -1,152 +1,162 @@
 .PartialReg {
-    display: inherit;
-    margin: auto;
-    max-width: none !important;
-    padding-left: 15px;
-    padding-right: 15px;
-    min-height: 66vh;
+  display: inherit;
+  margin: auto;
+  max-width: none !important;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 66vh;
 }
+
 .title {
-    margin-top: 0;
-    margin-bottom: 0;
-    text-align: center;
-    font-size: 2.25rem;
-    font-weight: 700;
-    line-height: 46px;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 46px;
 }
 
 .toolbar__title {
-    border-radius: 20px;
-    width: 100%;
+  border-radius: 20px;
+  width: 100%;
 }
 
 .wrapperConsolidator {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .ppaContainerWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
 .ppaContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
 }
+
 .soc-en {
-    width: 350px;
-    max-width: 350px;
-    min-width: 350px;
-    min-height: 4.5rem;
+  width: 350px;
+  max-width: 350px;
+  min-width: 350px;
+  min-height: 4.5rem;
 }
+
 .clipped {
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .create-personal-account-with-email {
-    width: 350px;
-    max-width: 350px;
-    min-width: 350px;
-    margin-top: 16px;
-    margin: 0;
-    padding: 0;
+  width: 350px;
+  max-width: 350px;
+  min-width: 350px;
+  margin-top: 16px;
+  padding: 0;
 }
 
 .mat-form-field-fn {
-    display: inline-block;
-    width: 46%;
+  display: inline-block;
+  width: 46%;
 }
+
 .floating-label {
-    display: inline-block;
-    width: 100%;
-    position: relative;
+  display: inline-block;
+  width: 100%;
+  position: relative;
 }
 
 .textbox {
-    width: inherit;
-    display: inline-block;
-    color: var(--textbox-foreground-color, #111820);
-    font-size: 0.875rem;
-    position: relative;
+  width: inherit;
+  display: inline-block;
+  color: var(--textbox-foreground-color, #111820);
+  font-size: 0.875rem;
+  position: relative;
 }
+
 input {
-    width: inherit;
-    font-family: inherit;
-    color: var(--textbox-foreground-color, #111820);
+  width: inherit;
+  font-family: inherit;
+  color: var(--textbox-foreground-color, #111820);
 }
 
 .mat-form-field-ln {
-    width: 46%;
-    float: right;
+  width: 46%;
+  float: right;
 }
+
 .mat-form-field-un {
-    position: relative;
+  position: relative;
 }
+
 .mat-form-field-email {
-    width: 46%;
-    float: right;
+  width: 46%;
+  float: right;
 }
+
 .mat-form-field-password {
-    width: 100%;
-    position: relative;
-    min-height: 3.5rem;
+  width: 100%;
+  position: relative;
+  min-height: 3.5rem;
 }
+
 #showpasswordcontainer {
-    top: 11px;
-    position: absolute;
-    float: right;
-    right: 12px;
+  top: 11px;
+  position: absolute;
+  float: right;
+  right: 12px;
 }
 
 .mat-card-actions {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    position: relative;
-    margin-left: 3px;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  position: relative;
+  margin-left: 3px;
 }
 
 button {
-    margin-top: 8px;
-    background-color: var(--button-primary-disabled-background-color, #3665f3);
-    border-color: var(--button-primary-border-color, #3665f3);
-    color: var(--button-primary-disabled-foreground-color, #fff);
-    opacity: 1;
-    margin-right: 1rem;
-    padding: var(--button-large-padding-vertical, 14px) var(--button-padding-horizontal, 16px);
-    font-size: 1rem;
-    min-height: 48px;
-    width: 100%;
-    border: 1px solid;
-    box-sizing: border-box;
-    font-family: inherit;
-    margin: 0;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: bottom;
-    display: inline-block;
-    min-width: 128px;
-    cursor: pointer;
+  margin-top: 8px;
+  background-color: var(--button-primary-disabled-background-color, #3665f3);
+  border-color: var(--button-primary-border-color, #3665f3);
+  color: var(--button-primary-disabled-foreground-color, #fff);
+  opacity: 1;
+  margin-right: 1rem;
+  padding: var(--button-large-padding-vertical, 14px) var(--button-padding-horizontal, 16px);
+  font-size: 1rem;
+  min-height: 48px;
+  width: 100%;
+  border: 1px solid;
+  box-sizing: border-box;
+  font-family: inherit;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: bottom;
+  display: inline-block;
+  min-width: 128px;
+  cursor: pointer;
 }
+
 .mainContent {
-    background-color: var(--color-background-default, #fff);
-    color: var(--color-text-default, #111820);
-    font-family: "Market Sans", "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif;
-    font-size: 0.875rem;
-    -webkit-text-size-adjust: 100%;
+  background-color: var(--color-background-default, #fff);
+  color: var(--color-text-default, #111820);
+  font-family: "Market Sans", "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif;
+  font-size: 0.875rem;
+  -webkit-text-size-adjust: 100%;
 }
 
 div {
-    display: block;
+  display: block;
 }

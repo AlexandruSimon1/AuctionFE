@@ -1,158 +1,161 @@
 #mainBody {
-    font-family: "Helvetica neue", Helvetica, Arial, Sans-serif;
+  font-family: "Helvetica neue", Helvetica, Arial, Sans-serif;
 }
 
 #Body {
-    font-family: Skin-market-sans;
+  font-family: Skin-market-sans;
 }
 
 #CenterPanelDF {
-    font-family: Arial, Sans-Serif, Verdana;
+  font-family: Arial, Sans-Serif, Verdana;
 }
 
 #CentralPanel {
-    position: relative;
+  position: relative;
 }
 
 #CenterPanelInternal {
-    outline: 0;
+  outline: 0;
 }
 
 #PicturePanel {
-    float: left;
+  float: left;
 }
 
 #linkMainImg {
-    background-color: transparent;
-    padding: 0;
-    border: 0;
-    appearance: auto;
-    -webkit-writing-mode: horizontal-tb !important;
-    text-rendering: auto;
-    color: -internal-light-dark(black, white);
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  appearance: auto;
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
 }
 
 .it-ttl {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
 }
+
 .g-hdn {
-    position: absolute;
-    z-index: -1;
-    overflow: hidden;
-    width: 0;
-    height: 0;
-    outline: medium none;
-    font-size: 0;
-    line-height: 0;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  outline: medium none;
+  font-size: 0;
+  line-height: 0;
 }
+
 .u-dspn {
-    display: none;
+  display: none;
 }
 
 form {
-    display: block;
+  display: block;
 }
 
 .lable {
-    text-align: right;
-    color: #333;
-    font-size: 14px;
-    width: 21%;
-    padding-right: 13px;
-    font-weight: normal;
-    word-wrap: break-word;
-    float: left;
+  text-align: right;
+  color: #333;
+  font-size: 14px;
+  width: 21%;
+  padding-right: 13px;
+  font-weight: normal;
+  word-wrap: break-word;
+  float: left;
 }
 
 .vi-noborder {
-    background-color: #fff;
+  background-color: #fff;
 }
+
 .columncontainer {
-    flex-direction: column;
-    margin: 0;
-    padding: 16px 0;
-    display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 16px 0;
+  display: flex;
 }
 
 .labelvalue-column {
-    min-height: auto;
-    margin-bottom: 8px;
-    flex: 48%;
-    display: flex;
-    flex-direction: column;
+  min-height: auto;
+  margin-bottom: 8px;
+  flex: 48%;
+  display: flex;
+  flex-direction: column;
 }
 
 .vi-currentBidAccColorClass {
-    color: #333;
-    font-size: 14px;
-    line-height: normal;
+  color: #333;
+  font-size: 14px;
+  line-height: normal;
 }
 
 .vi-compat-hide {
-    display: none;
-    height: 8px;
-    clear: both;
+  display: none;
+  height: 8px;
+  clear: both;
 }
 
 .spcr {
-    height: 8px;
-    clear: both;
+  height: 8px;
+  clear: both;
 }
 
 .u-flL {
-    text-align: left;
-    float: left;
+  text-align: left;
+  float: left;
 }
 
 .gh-ar-hdn {
-    color: #000;
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
+  color: #000;
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .vi-tm-left {
-    color: #333;
-    font-family: Verdana !important;
-    font-size: 10px;
+  color: #333;
+  font-family: Verdana !important;
+  font-size: 10px;
 }
 
 .vi-price {
-    font: bold medium Trebuchet, "Trebuchet MS";
-    width: auto;
-    white-space: normal;
-    flex: 1 1 60%;
-    padding-right: 5px;
+  font: bold medium Trebuchet, "Trebuchet MS";
+  width: auto;
+  white-space: normal;
+  flex: 1 1 60%;
+  padding-right: 5px;
 }
 
 #prcIsum_bidPrice {
-    font-family: Skin-market-sans !important;
-    color: rgba(17, 24, 32, 0.87) !important;
-    font-weight: 700;
-    font-size: 24px;
-    width: auto;
-    white-space: normal;
+  font-family: Skin-market-sans !important;
+  color: rgba(17, 24, 32, 0.87) !important;
+  font-weight: 700;
+  font-size: 24px;
+  width: auto;
+  white-space: normal;
 }
 
 .lbl-value-set {
-    display: flex;
+  display: flex;
 }
 
 .rsvnm {
-    line-height: 20px;
-    font-size: 14px;
-    color: #333;
-    font-family: Verdana !important;
+  line-height: 20px;
+  font-size: 14px;
+  color: #333;
+  font-family: Verdana !important;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 input[type=number] {
@@ -160,162 +163,161 @@ input[type=number] {
 }
 
 #MaxBidId {
-    display: block;
-    width: 70%;
-    box-shadow: none;
-    border: 1px solid #767676;
-    -webkit-border-radius: 0;
-    padding: 18px 0 0 13px;
-    font-family: Skin-market-sans !important;
-    font-size: 14px;
-    margin-bottom: 0;
-    height: 22px;
-    color: #333;
-    margin: 0 0 5px;
-    background: #fff;
+  display: block;
+  width: 70%;
+  box-shadow: none;
+  border: 1px solid #767676;
+  -webkit-border-radius: 0;
+  padding: 18px 0 0 13px;
+  font-family: Skin-market-sans !important;
+  font-size: 14px;
+  height: 22px;
+  color: #333;
+  margin: 0 0 5px;
+  background: #fff;
 }
 
 .bidAmt {
-    color: #767676;
-    margin-top: -15px;
+  color: #767676;
+  margin-top: -15px;
 }
 
 .vi-eco-fee {
-    color: #111820;
-    font-size: 14px;
-    line-height: 20px;
-    padding-top: 8px;
-    display: none;
+  color: #111820;
+  font-size: 14px;
+  line-height: 20px;
+  padding-top: 8px;
+  display: none;
 }
 
 .sprtr {
-    border-bottom: 1px solid #fff;
-    border-top: 1px solid #ccc;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #ccc;
 }
 
 .vi-bb-small-clpd-btn {
-    margin-left: calc(21% + 16px);
-    max-width: 260px;
-    flex: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    min-width: 140px;
+  margin-left: calc(21% + 16px);
+  max-width: 260px;
+  flex: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 140px;
 }
 
 .vi-flex-cta {
-    width: 100%;
-    margin-bottom: 0;
+  width: 100%;
+  margin-bottom: 0;
 }
+
 .bidBtn_btn {
-    background: #0053a0 !important;
-    border: 1px solid #0053a0;
-    font-weight: bold;
-    border-radius: 20px;
-    display: block;
-    width: 100%;
+  background: #0053a0 !important;
+  border: 1px solid #0053a0;
+  font-weight: bold;
+  border-radius: 20px;
+  display: block;
+  width: 100%;
 }
 
 .vi-flex-separator {
-    display: flex;
-    width: 100%;
-    height: 0;
+  display: flex;
+  width: 100%;
+  height: 0;
 }
 
 .vi-line-separator {
-    flex: 49%;
-    border-top: 1px solid #e5e5e5;
+  flex: 49%;
+  border-top: 1px solid #e5e5e5;
 }
 
 .lbl {
-    color: #333;
-    font-size: 14px;
-    padding-top: 0;
-    flex: 1 1 6%;
-    text-align: right;
-    margin-right: 13px;
-    line-height: normal;
+  color: #333;
+  font-size: 14px;
+  padding-top: 0;
+  flex: 1 1 6%;
+  text-align: right;
+  margin-right: 13px;
+  line-height: normal;
 }
 
 .val {
-    flex: 1 1 60%;
-    padding-right: 5px;
+  flex: 1 1 60%;
+  padding-right: 5px;
 }
 
 #vi-mskumap-none {
-    width: auto;
-    padding-right: 0;
-    white-space: normal;
-    display: table;
-    text-align: left;
-    font: bold medium Trebuchet, "Trebuchet MS";
-    float: left;
+  width: auto;
+  padding-right: 0;
+  white-space: normal;
+  display: table;
+  text-align: left;
+  font: bold medium Trebuchet, "Trebuchet MS";
+  float: left;
 }
 
 #prcIsum {
-    font-size: 24px;
-    font-weight: 700;
-    font-family: Skin-market-sans !important;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.33;
-    letter-spacing: normal;
-    color: rgba(17, 24, 32, 0.87) !important;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Skin-market-sans !important;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: rgba(17, 24, 32, 0.87) !important;
 }
 
 #BottomPanelDF {
-    font-family: Arial, Sans-Serif, Verdana;
-    font-size: 13px;
-    line-height: 100%;
+  font-family: Arial, Sans-Serif, Verdana;
+  font-size: 13px;
+  line-height: 100%;
 }
 
 .tab {
-    border-bottom: 1px solid #999;
-    white-space: nowrap;
-    padding: 0 15px;
+  border-bottom: 1px solid #999;
+  white-space: nowrap;
+  padding: 0 15px;
 }
 
 a.item.sel {
-    color: #333;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    border: 1px solid;
-    margin-bottom: -1px;
-    border-color: #999 #999 #fff;
-    background: 0;
-    margin: 0 7px 0 0;
-    padding: 7px 10px;
-    text-decoration: none;
-    float: left;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid;
+  border-color: #999 #999 #fff;
+  background: 0;
+  margin: 0 7px 0 0;
+  padding: 7px 10px;
+  text-decoration: none;
+  float: left;
 }
 
 .tab_wp h2 {
-    font-size: 16px;
-    font-weight: bold;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .tab_clr {
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-    overflow: hidden;
-}
-.content {
-    line-height: normal;
-    display: block;
-    padding: 15px;
-}
-.sh-cnt {
-    margin-bottom: 15px;
-    clear: both;
-    width: 100%;
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  overflow: hidden;
 }
 
-div{
-    display: block;
+.content {
+  line-height: normal;
+  display: block;
+  padding: 15px;
+}
+
+.sh-cnt {
+  margin-bottom: 15px;
+  clear: both;
+  width: 100%;
+}
+
+div {
+  display: block;
 }
 
 body,
@@ -336,7 +338,7 @@ tbody,
 tr,
 th,
 td,
-section{
+section {
   margin: 0;
   padding: 0;
   border: 0;

@@ -22,12 +22,12 @@
             <div class="carousel__viewport text-center text-lg-center">
               <ul class="carousel__list">
                 <mat-card-content class="auctionDisplay col-lg-3 col-md-4 col-6"
-                  *ngFor="let recentlyAuction of recentlyAuctions">
+                                  *ngFor="let recentlyAuction of recentlyAuctions">
                   <li class="hl-carousel__item" style="margin-right: 16px;">
                     <a [routerLink]="['/auction', recentlyAuction?.id]"
-                      class="hl-item__link d-block mb-4 h-100 text-center">
-                      <img class="img-thumbnail" src="https://auction-simon-project.page:82/auction-system-api/api/v1/s3/download/{{recentlyAuction?.id}}"
-                        style="height: 150px; opacity: 1;" alt=""><br>
+                       class="hl-item__link d-block mb-4 h-100 text-center">
+                      <img class="img-thumbnail" src="{{s3BucketUrl}}{{recentlyAuction?.id}}"
+                           style="height: 150px; opacity: 1;" alt=""><br>
                       <div><span class="hl-item__displayPrice">{{recentlyAuction?.title}}</span></div>
                     </a>
                     <span class="hl-item__displayPrice">Starting bid: {{recentlyAuction.minimumPrice}} USD</span>
@@ -64,12 +64,12 @@
             <div class="carousel__viewport text-center text-lg-center">
               <ul class="carousel__list">
                 <mat-card-content class="auctionDisplay col-lg-3 col-md-4 col-6"
-                  *ngFor="let endingAuction of endingAuctions">
+                                  *ngFor="let endingAuction of endingAuctions">
                   <li class="hl-carousel__item" style="margin-right: 16px;">
                     <a [routerLink]="['/auction', endingAuction?.id]"
-                      class="hl-item__link d-block mb-4 h-100 text-center">
-                      <img class="img-thumbnail" src="https://auction-simon-project.page:82/auction-system-api/api/v1/s3/download/{{endingAuction?.id}}"
-                        style="height: 150px; opacity: 1;" alt=""><br>
+                       class="hl-item__link d-block mb-4 h-100 text-center">
+                      <img class="img-thumbnail" src="{{s3BucketUrl}}{{endingAuction?.id}}"
+                           style="height: 150px; opacity: 1;" alt=""><br>
                       <div><span class="hl-item__displayPrice">{{endingAuction?.title}}</span></div>
                     </a>
                     <span class="hl-item__displayPrice">Starting bid: {{endingAuction?.minimumPrice}} USD</span>
@@ -106,12 +106,12 @@
             <div class="carousel__viewport text-center text-lg-center">
               <ul class="carousel__list">
                 <mat-card-content class="auctionDisplay col-lg-3 col-md-4 col-6"
-                  *ngFor="let recentlyEndedAuction of recentlyEndedAuctions">
+                                  *ngFor="let recentlyEndedAuction of recentlyEndedAuctions">
                   <li class="hl-carousel__item" style="margin-right: 16px;">
                     <a [routerLink]="['/auction', recentlyEndedAuction?.id]"
-                      class="hl-item__link d-block mb-4 h-100 text-center">
-                      <img class="img-thumbnail" src="https://auction-simon-project.page:82/auction-system-api/api/v1/s3/download/{{recentlyEndedAuction?.id}}"
-                        style="height: 150px; opacity: 1;" alt=""><br>
+                       class="hl-item__link d-block mb-4 h-100 text-center">
+                      <img class="img-thumbnail" src="{{s3BucketUrl}}{{recentlyEndedAuction?.id}}"
+                           style="height: 150px; opacity: 1;" alt=""><br>
                       <div><span class="hl-item__displayPrice">{{recentlyEndedAuction?.title}}</span></div>
                     </a>
                     <span class="hl-item__displayPrice">Starting bid: {{recentlyEndedAuction?.minimumPrice}} USD</span>

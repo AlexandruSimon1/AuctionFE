@@ -1,24 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
-
 html,
 body {
-    height: 100%;
-    font-family: "Market Sans", Arial, sans-serif;
+  height: 100%;
+  font-family: "Market Sans", Arial, sans-serif;
 }
+
 body {
-    min-width: 600px;
-    margin: 0;
-    font-size: 0.875rem;
-    -webkit-text-size-adjust: 100%;
-    background-color: var(--color-background-default,#fff);
-    color: var(--color-text-primary,#111820);
+  min-width: 600px;
+  margin: 0;
+  font-size: 0.875rem;
+  -webkit-text-size-adjust: 100%;
+  background-color: var(--color-background-default, #fff);
+  color: var(--color-text-primary, #111820);
 }
 
 html {
-    font-size: 100%;
-    display: block;
+  font-size: 100%;
+  display: block;
 }
 
-head{
-    display: none;
+head {
+  display: none;
 }

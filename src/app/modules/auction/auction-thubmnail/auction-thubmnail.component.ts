@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { AuctionService } from 'src/app/services/auction.service';
+import {Component, OnInit} from '@angular/core';
+import {AuctionService} from 'src/app/services/auction.service';
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-auction-thubmnail',
@@ -11,7 +12,11 @@ export class AuctionThumbailComponent implements OnInit {
   public recentlyAuctions;
   public endingAuctions;
   public recentlyEndedAuctions;
-  constructor(private auctionService: AuctionService) { }
+
+  s3BucketUrl = environment.baseAPIUrl + "s3/download/";
+
+  constructor(private auctionService: AuctionService) {
+  }
 
   ngOnInit(): void {
     this.getAuctions();
@@ -26,6 +31,7 @@ export class AuctionThumbailComponent implements OnInit {
       err => console.error(err)
     );
   }
+
   getRecentlyAuctions() {
     this.auctionService.getRecentlyAddedAuctions().subscribe(
       data => this.recentlyAuctions = data,

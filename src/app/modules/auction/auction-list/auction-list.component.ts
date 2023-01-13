@@ -1,8 +1,9 @@
-import { Category } from './../../../models/category';
-import { Auction } from '../../../models/auction';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { CategoryService } from 'src/app/services/category.service';
+import {Category} from './../../../models/category';
+import {Auction} from '../../../models/auction';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {CategoryService} from 'src/app/services/category.service';
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-auction-list',
@@ -14,7 +15,10 @@ export class AuctionListComponent implements OnInit {
   categories: Category[];
   category: Category;
 
-  constructor(private router: Router, private categoryService: CategoryService, private activatedRoute: ActivatedRoute) {
+  s3BucketUrl = environment.baseAPIUrl + "s3/download/";
+
+  constructor(private router: Router, private categoryService: CategoryService,
+              private activatedRoute: ActivatedRoute) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
